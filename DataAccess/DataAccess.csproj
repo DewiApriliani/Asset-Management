@@ -54,6 +54,9 @@
     <Compile Include="Models\TypeItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\HandoverVM.cs" />
+    <Compile Include="ViewModel\ParameterVM.cs" />
+    <Compile Include="ViewModel\ReturnVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
