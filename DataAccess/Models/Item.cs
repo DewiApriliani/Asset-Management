@@ -19,8 +19,10 @@ namespace DataAccess.Models
         public DateTimeOffset Year_Procurement { get; set; }
         public int Stock { get; set; }
         public double Price { get; set; }
-
         public int Typeitem_Id { get; set; }
+
+        [ForeignKey("Location")]
         public int Location_Id { get; set; }
+        public Location Location { get; set; }
     }
 }

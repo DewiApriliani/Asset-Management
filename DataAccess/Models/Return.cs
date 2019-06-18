@@ -17,8 +17,10 @@ namespace DataAccess.Models
         public string Status { get; set; }
         public string Last_Condition { get; set;}
         public DateTimeOffset Date_Return { get; set; }
-
         public int User_Id { get; set; }
+
+        [ForeignKey("Item")]
         public int Item_Id { get; set; }
+        public Item Item { get; set; }
     }
 }
