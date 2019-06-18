@@ -60,27 +60,15 @@
     <Compile Include="Models\TypeItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="ViewModel\ItemVM.cs" />
     <Compile Include="ViewModel\LoaningVM.cs" />
     <Compile Include="ViewModel\LocationVM.cs" />
     <Compile Include="ViewModel\ProcurementVM.cs" />
     <Compile Include="ViewModel\TypeItemVM.cs" />
-=======
-    <Compile Include="ViewModel\HandoverVM.cs" />
-    <Compile Include="ViewModel\ParameterVM.cs" />
-    <Compile Include="ViewModel\ReturnVM.cs" />
->>>>>>> b9d3ac1fecb266c3eb9206a3e8e30528ab485b46
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{5A23ACB6-743D-4A43-99F5-CDE0669A83A7}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

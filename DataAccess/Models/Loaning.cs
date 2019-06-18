@@ -1,8 +1,5 @@
 ﻿using Core.Base;
-<<<<<<< HEAD
 using DataAccess.ViewModel;
-=======
->>>>>>> b9d3ac1fecb266c3eb9206a3e8e30528ab485b46
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,10 +12,7 @@ namespace DataAccess.Models
     [Table("TB_T_Loaning")]
     public class Loaning : BaseModel
     {
-<<<<<<< HEAD
         public int User_Id { get; set; }
-=======
->>>>>>> b9d3ac1fecb266c3eb9206a3e8e30528ab485b46
         public DateTimeOffset Date_Loaning { get; set; }
         public DateTimeOffset Date_Return { get; set; }
         public string Name_User { get; set; }
