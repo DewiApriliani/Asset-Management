@@ -16,8 +16,9 @@ namespace DataAccess.Models
         public string Name_User { get; set; }
         public string Name_Admin { get; set; }
         public DateTimeOffset Date_Handover { get; set; }
-
-        public int Employee_Id { get; set; }
+        public int User_Id { get; set; }
+        public int Divhead_Id { get; set; }
+        public int Admin_Id { get; set; }
 
         [ForeignKey("Loaning")]
         public int Loaning_Id { get; set; }
@@ -31,14 +32,34 @@ namespace DataAccess.Models
 
         public Handover(HandoverVM HandoverVM)
         {
-            this.Id = Id;
-            this.Descriptioan = Descriptioan;
-            this.Name_User = Name_User;
-            this.Name_Admin = Name_Admin;
-            this.Date_Handover = Date_Handover;
-            this.Employee_Id = Employee_Id;
-            this.Loaning_Id = Loaning_Id;
-            this.Return_Id = Return_Id;
+            this.Descriptioan = HandoverVM.Descriptioan;
+            this.Name_User = HandoverVM.Name_User;
+            this.Name_Admin = HandoverVM.Name_User;
+            this.Date_Handover = HandoverVM.Date_Handover;
+            this.Admin_Id = HandoverVM.Admin_id;
+            this.User_Id = HandoverVM.User_Id;
+            this.Divhead_Id = HandoverVM.Divhead_Id;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
         }
+
+        public void Update(int id, HandoverVM HandoverVM)
+        {
+            this.Id = id;
+            this.Descriptioan = HandoverVM.Descriptioan;
+            this.Name_User = HandoverVM.Name_User;
+            this.Name_Admin = HandoverVM.Name_User;
+            this.Date_Handover = HandoverVM.Date_Handover;
+            this.Admin_Id = HandoverVM.Admin_id;
+            this.User_Id = HandoverVM.User_Id;
+            this.Divhead_Id = HandoverVM.Divhead_Id;
+            this.UpdateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Delete()
+        {
+            this.IsDelete = true;
+            this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
     }
 }

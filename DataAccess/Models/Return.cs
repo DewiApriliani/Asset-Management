@@ -18,8 +18,7 @@ namespace DataAccess.Models
         public string Status { get; set; }
         public string Last_Condition { get; set;}
         public DateTimeOffset Date_Return { get; set; }
-
-        public int Employee_Id { get; set; }
+        public int User_Id { get; set; }
 
         [ForeignKey("Item")]
         public int Item_Id { get; set; }
@@ -29,14 +28,34 @@ namespace DataAccess.Models
 
         public Return(ReturnVM ReturnVM)
         {
-            this.Name_User = Name_User;
-            this.Name_Item = Name_Item;
-            this.Quantity = Quantity;
-            this.Status = Status;
-            this.Last_Condition = Last_Condition;
-            this.Date_Return = Date_Return;
-            this.Employee_Id = Employee_Id;
-            this.Item_Id = Item_Id;
+            this.Name_User = ReturnVM.Name_User;
+            this.Name_Item = ReturnVM.Name_Item;
+            this.Quantity = ReturnVM.Quantity;
+            this.Status = ReturnVM.Status;
+            this.Last_Condition = ReturnVM.Last_Condition;
+            this.Date_Return = ReturnVM.Date_Return;
+            this.User_Id = ReturnVM.User_Id;
+            this.Item_Id = ReturnVM.Item_Id;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
         }
-    }
+
+        public void Update(int id, ReturnVM ReturnVM)
+        {
+            this.Id = id;
+            this.Name_User = ReturnVM.Name_User;
+            this.Name_Item = ReturnVM.Name_Item;
+            this.Quantity = ReturnVM.Quantity;
+            this.Status = ReturnVM.Status;
+            this.Last_Condition = ReturnVM.Last_Condition;
+            this.Date_Return = ReturnVM.Date_Return;
+            this.User_Id = ReturnVM.User_Id;
+            this.Item_Id = ReturnVM.Item_Id;
+            this.UpdateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Delete()
+        {
+            this.IsDelete = true;
+            this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
+        }
 }

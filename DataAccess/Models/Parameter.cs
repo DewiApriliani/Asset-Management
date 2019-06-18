@@ -21,6 +21,21 @@ namespace DataAccess.Models
         {
             this.Name_Validation = Name_Validation;
             this.Punishment = Punishment;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
         }
+        public void Update(int id, HandoverVM HandoverVM)
+        {
+            this.Id = id;
+            this.Name_Validation = Name_Validation;
+            this.Punishment = Punishment;
+            this.UpdateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Delete()
+        {
+            this.IsDelete = true;
+            this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
     }
 }
