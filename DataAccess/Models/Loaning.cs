@@ -17,8 +17,10 @@ namespace DataAccess.Models
         public string Name_Item { get; set; }
         public int Quantity { get; set; }
         public string Status { get; set; }
-
         public int User_Id { get; set; }
+
+        [ForeignKey("Item")]
         public int Item_Id { get; set; }
+        public Item Item { get; set; }
     }
 }
