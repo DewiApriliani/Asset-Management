@@ -11,6 +11,6 @@ namespace DataAccess.Models
     [Table("TB_M_TypeItem")]
     public class TypeItem : BaseModel
     {
-        public string Name_TypeItem { get; set; }
+        public string Name_Typeitem { get; set; }
     }
 }

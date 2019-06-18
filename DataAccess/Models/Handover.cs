@@ -15,9 +15,8 @@ namespace DataAccess.Models
         public string Name_User { get; set; }
         public string Name_Admin { get; set; }
         public DateTimeOffset Date_Handover { get; set; }
-        public int User_id { get; set; }
-        public int Admin_Id { get; set; }
-        public int Divhead_Id { get; set; }
+
+        public int Employee_Id { get; set; }
 
         [ForeignKey("Loaning")]
         public int Loaning_Id { get; set; }

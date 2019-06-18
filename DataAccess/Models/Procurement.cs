@@ -20,7 +20,9 @@ namespace DataAccess.Models
         public int Quantity { get; set; }
         public string Status { get; set; }
 
-        public int Admin_Id { get; set; }
+        public int Employee_Id { get; set; }
+        
+        [ForeignKey("Item")]
         public int Item_Id { get; set; }
     }
 }
