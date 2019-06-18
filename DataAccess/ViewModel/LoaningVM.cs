@@ -10,7 +10,7 @@ namespace DataAccess.ViewModel
     {
         public LoaningVM() { }
 
-        public LoaningVM(int user_Id, DateTimeOffset date_Loaning, DateTimeOffset date_Return, string name_User, string name_Item, int quantity, string status)
+        public LoaningVM(int user_Id, DateTimeOffset date_Loaning, DateTimeOffset date_Return, string name_User, string name_Item, int quantity, string status, int item_Id)
         {
             this.User_Id = user_Id;
             this.Date_Loaning = date_Loaning;
@@ -19,6 +19,7 @@ namespace DataAccess.ViewModel
             this.Name_Item = name_Item;
             this.Quantity = quantity;
             this.Status = status;
+            this.Item_Id = item_Id;
         }
 
         public int Id { get; set; }
