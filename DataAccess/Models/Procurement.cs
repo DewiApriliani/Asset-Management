@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -8,9 +9,8 @@ using System.Threading.Tasks;
 namespace DataAccess.Models
 {
     [Table("TB_T_Procurement")]
-    public class Procurement
+    public class Procurement : BaseModel
     {
-        public int Id { get; set; }
         public string Name_Procurement { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
