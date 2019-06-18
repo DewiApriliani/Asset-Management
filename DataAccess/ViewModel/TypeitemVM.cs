@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace DataAccess.ViewModel
 {
-    public class TypeitemVM
+    public class TypeItemVM
     {
-        public TypeitemVM() { }
+        public TypeItemVM() { }
 
-        public TypeitemVM(string name_Typeitem)
+        public TypeItemVM(string name_TypeItem)
         {
-            this.Name_Typeitem = name_Typeitem;
+            this.Name_TypeItem = name_TypeItem;
         }
 
-        public string Name_Typeitem { get; set; }
+        public int Id { get; set; }
+        public string Name_TypeItem { get; set; }
     }
 }

@@ -62,9 +62,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ItemVM.cs" />
     <Compile Include="ViewModel\LoaningVM.cs" />
-    <Compile Include="ViewModel\Location.cs" />
+    <Compile Include="ViewModel\LocationVM.cs" />
     <Compile Include="ViewModel\ProcurementVM.cs" />
-    <Compile Include="ViewModel\TypeitemVM.cs" />
+    <Compile Include="ViewModel\TypeItemVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

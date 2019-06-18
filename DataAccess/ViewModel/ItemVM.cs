@@ -32,7 +32,7 @@ namespace DataAccess.ViewModel
         public int Stock { get; set; }
         public double Price { get; set; }
 
-        public int Typeitem_Id { get; set; }
+        public int TypeItem_Id { get; set; }
         public int Location_Id { get; set; }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataAccess.ViewModel
 {
-    public class Location
+    public class LocationVM
     {
-        public Location() { }
+        public LocationVM() { }
 
-        public Location(string name_Location, string floor)
+        public LocationVM(string name_Location, string floor)
         {
             this.Name_Location = name_Location;
             this.Floor = floor;
