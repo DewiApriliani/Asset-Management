@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -8,9 +9,8 @@ using System.Threading.Tasks;
 namespace DataAccess.Models
 {
     [Table("TB_T_Loaning")]
-    public class Loaning
+    public class Loaning : BaseModel
     {
-        public int Id { get; set; }
         public DateTimeOffset Date_Loaning { get; set; }
         public DateTimeOffset Date_Return { get; set; }
         public string Name_User { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -8,9 +9,8 @@ using System.Threading.Tasks;
 namespace DataAccess.Models
 {
     [Table("TB_M_Parameter")]
-    public class Parameter
+    public class Parameter : BaseModel
     {
-        public int Id { get; set; }
         public string Name_Validation { get; set; }
         public string Punishment { get; set; }
     }
