@@ -10,9 +10,9 @@ namespace DataAccess.ViewModel
     {
         public ProcurementVM() { }
 
-        public ProcurementVM(int admin_Id, string name_Procurement, string description, double price, string name_Item, DateTimeOffset date_procurement, string name_Admin, int quantity, string status, int employee_Id, int item_Id )
+        public ProcurementVM(int admin_Id, string name_Procurement, string description, double price, string name_Item, DateTimeOffset date_procurement, string name_Admin, int quantity, string status, int item_Id )
         {
-            this.Admin_Id = employee_Id;
+            this.Admin_Id = admin_Id;
             this.Name_Procurement = name_Procurement;
             this.Description = description;
             this.Price = price;
