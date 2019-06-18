@@ -52,10 +52,22 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Application\HandoverRepository.cs" />
+    <Compile Include="Repository\Application\ParameterRepository.cs" />
+    <Compile Include="Repository\Application\ReturnRepository.cs" />
+    <Compile Include="Repository\IHandoverRepository.cs" />
+    <Compile Include="Repository\IParameterRepository.cs" />
+    <Compile Include="Repository\IReturnRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{22818FA4-CEF1-4905-8461-871D207B6EEA}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

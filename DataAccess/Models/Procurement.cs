@@ -24,6 +24,7 @@ namespace DataAccess.Models
         
         [ForeignKey("Item")]
         public int Item_Id { get; set; }
+        public Item Item { get; set; }
 
         public Procurement(ProcurementVM procurementVM)
         {

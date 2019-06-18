@@ -23,6 +23,7 @@ namespace DataAccess.Models
 
         [ForeignKey("TypeItem")]
         public int Typeitem_Id { get; set; }
+        public TypeItem TypeItem { get; set; }
 
         [ForeignKey("Location")]
         public int Location_Id { get; set; }
