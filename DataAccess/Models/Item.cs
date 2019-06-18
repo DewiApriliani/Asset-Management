@@ -1,5 +1,8 @@
 ﻿using Core.Base;
+<<<<<<< HEAD
 using DataAccess.ViewModel;
+=======
+>>>>>>> b9d3ac1fecb266c3eb9206a3e8e30528ab485b46
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;

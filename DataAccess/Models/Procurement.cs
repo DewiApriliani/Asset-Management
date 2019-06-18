@@ -1,5 +1,8 @@
 ﻿using Core.Base;
+<<<<<<< HEAD
 using DataAccess.ViewModel;
+=======
+>>>>>>> b9d3ac1fecb266c3eb9206a3e8e30528ab485b46
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,7 +15,10 @@ namespace DataAccess.Models
     [Table("TB_T_Procurement")]
     public class Procurement : BaseModel
     {
+<<<<<<< HEAD
         public int Admin_Id { get; set; }
+=======
+>>>>>>> b9d3ac1fecb266c3eb9206a3e8e30528ab485b46
         public string Name_Procurement { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
