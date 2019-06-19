@@ -10,10 +10,9 @@ namespace Common.Repository
 {
     public interface IHandoverRepository
     {
-        List<Handover> Get();
-        List<Handover> GetSearch(string values);
         Handover Get(int id);
         bool Insert(HandoverVM HandoverVM);
+        bool Update(int id, HandoverVM HandoverVM);
         bool Delete(int id);
     }
 }

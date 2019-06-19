@@ -53,17 +53,27 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Application\HandoverRepository.cs" />
+    <Compile Include="Repository\Application\LocationRepository.cs" />
+    <Compile Include="Repository\Application\LoginRepository.cs" />
     <Compile Include="Repository\Application\ParameterRepository.cs" />
     <Compile Include="Repository\Application\ReturnRepository.cs" />
+    <Compile Include="Repository\Application\TypeItemRepository.cs" />
     <Compile Include="Repository\IHandoverRepository.cs" />
+    <Compile Include="Repository\ILocationRepository.cs" />
+    <Compile Include="Repository\ILoginRepository.cs" />
     <Compile Include="Repository\IParameterRepository.cs" />
     <Compile Include="Repository\IReturnRepository.cs" />
+    <Compile Include="Repository\ITypeItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{5A23ACB6-743D-4A43-99F5-CDE0669A83A7}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{22818FA4-CEF1-4905-8461-871D207B6EEA}</Project>
       <Name>DataAccess</Name>
