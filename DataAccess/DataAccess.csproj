@@ -51,12 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyContext.cs" />
-    <Compile Include="Migrations\201906190225141_AssetManagmenetDB.cs" />
-    <Compile Include="Migrations\201906190225141_AssetManagmenetDB.Designer.cs">
-      <DependentUpon>201906190225141_AssetManagmenetDB.cs</DependentUpon>
+    <Compile Include="Migrations\201906180940203_AssetManagementDB.cs" />
+    <Compile Include="Migrations\201906180940203_AssetManagementDB.Designer.cs">
+      <DependentUpon>201906180940203_AssetManagementDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Handover.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Loaning.cs" />
@@ -88,8 +87,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906190225141_AssetManagmenetDB.resx">
-      <DependentUpon>201906190225141_AssetManagmenetDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906180940203_AssetManagementDB.resx">
+      <DependentUpon>201906180940203_AssetManagementDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
