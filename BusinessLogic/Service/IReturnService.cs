@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.Repository
+namespace BusinessLogic.Service
 {
-   public interface ILocationRepository
+   public interface IReturnService
     {
-        Location Get(int id);
-        bool Insert(LocationVM LocationVM);
-        bool Update(int id, LocationVM LocationVM);
+        Return Get(int id);
+        List<Return> Get();
+        bool Insert(ReturnVM ReturnVM);
+        bool Update(int id, ReturnVM ReturnVM);
         bool Delete(int id);
     }
 }

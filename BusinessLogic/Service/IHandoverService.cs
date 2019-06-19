@@ -6,13 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.Repository
+namespace BusinessLogic.Service
 {
-   public interface ILocationRepository
+    public interface IHandoverService
     {
-        Location Get(int id);
-        bool Insert(LocationVM LocationVM);
-        bool Update(int id, LocationVM LocationVM);
+        Handover Get(int id);
+        bool Insert(HandoverVM HandoverVM);
         bool Delete(int id);
     }
 }

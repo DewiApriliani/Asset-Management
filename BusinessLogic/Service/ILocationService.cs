@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.Repository
+namespace BusinessLogic.Service.Application
 {
-   public interface ILocationRepository
+    interface ILocationService
     {
         Location Get(int id);
         bool Insert(LocationVM LocationVM);

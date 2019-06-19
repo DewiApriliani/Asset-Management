@@ -8,16 +8,19 @@ namespace DataAccess.ViewModel
 {
     public class ReturnVM
     {
-        public ReturnVM(string name_User, string name_Item, int quantity, string status, string last_Condition, DateTimeOffset date_Return, int user_Id, int item_Id)
+        public ReturnVM(string name_User, string name_Item, int quantity, string status, string last_Condition, DateTimeOffset date_Return, int user_Id, int item_Id, int typeItem_Id)
         {
-            this.Name_User = Name_User;
-            this.Name_Item = Name_Item;
-            this.Quantity = Quantity;
-            this.Status = Status;
-            this.Last_Condition = Last_Condition;
-            this.Date_Return = Date_Return;
-            this.User_Id = User_Id;
-            this.Item_Id = Item_Id;
+            this.Name_User = name_User;
+            this.Name_Item = name_Item;
+            this.Quantity = quantity;
+            this.Status = status;
+            this.Last_Condition = last_Condition;
+            this.Date_Return = date_Return;
+            this.User_Id = user_Id;
+            this.Item_Id = item_Id;
+            this.TypeItem_Id = typeItem_Id;
+
+            
         }
 
         public ReturnVM() { }
@@ -30,6 +33,7 @@ namespace DataAccess.ViewModel
         public DateTimeOffset Date_Return { get; set; }
         public int User_Id { get; set; }
         public int Item_Id { get; set; }
+        public int TypeItem_Id { get; set; }
 
     }
 }

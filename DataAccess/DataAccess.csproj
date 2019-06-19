@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201906190210482_AssetManagementDB2.Designer.cs">
       <DependentUpon>201906190210482_AssetManagementDB2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906190625535_AssetManagementDB3.cs" />
+    <Compile Include="Migrations\201906190625535_AssetManagementDB3.Designer.cs">
+      <DependentUpon>201906190625535_AssetManagementDB3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Handover.cs" />
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906190210482_AssetManagementDB2.resx">
       <DependentUpon>201906190210482_AssetManagementDB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906190625535_AssetManagementDB3.resx">
+      <DependentUpon>201906190625535_AssetManagementDB3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
