@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Common.Repository.Application
 {
-    public class LoaningRepository
+    public class LoaningRepository : ILoaningRepository
     {
         MyContext myContext = new MyContext();
         bool status;
@@ -76,6 +76,23 @@ namespace Common.Repository.Application
             {
                 return false;
             }
+        }
+
+        public List<Loaning> GetSearch(string values)
+        {
+            var get = myContext.Loanings.Include("Item").Where
+                (x => (x.Item_Id.ToString().Contains(values)) ||
+                (x.Name_Item.Contains(values)) ||
+                (x.Quantity.ToString().Contains(values)) ||
+                x.Id.ToString().Contains(values) &&
+                x.IsDelete == false).ToList();
+            return get;
+        }
+
+        public List<Loaning> Get()
+        {
+            var get = myContext.Loanings.Include("Item").Include("TypeItem").Where(x => x.IsDelete == false).ToList();
+            return get;
         }
     }
 }

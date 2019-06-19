@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Common.Repository.Application
 {
-    public class ItemRepository
+    public class ItemRepository : IItemRepository
     {
         MyContext myContext = new MyContext();
         bool status;
@@ -90,6 +90,12 @@ namespace Common.Repository.Application
                 (x.TypeItem.Name_TypeItem.Contains(values)) ||
                 x.Id.ToString().Contains(values) &&
                 x.IsDelete == false).ToList();
+            return get;
+        }
+
+        public List<Item> Get()
+        {
+            var get = myContext.Items.Include("TypeItem").Where(x => x.IsDelete == false).ToList();
             return get;
         }
     }

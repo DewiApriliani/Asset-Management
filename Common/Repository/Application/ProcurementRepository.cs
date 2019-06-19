@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Common.Repository.Application
 {
-    public class ProcurementRepository
+    public class ProcurementRepository : IProcurementRepository
     {
         MyContext myContext = new MyContext();
         bool status;
@@ -76,6 +76,24 @@ namespace Common.Repository.Application
             {
                 return false;
             }
+        }
+
+        public List<Procurement> GetSearch(string values)
+        {
+            var get = myContext.Procurements.Include("Item").Where
+                (x => (x.Item_Id.ToString().Contains(values)) ||
+                (x.Name_Item.Contains(values)) ||
+                (x.Price.ToString().Contains(values)) ||
+                (x.Quantity.ToString().Contains(values)) ||
+                x.Id.ToString().Contains(values) &&
+                x.IsDelete == false).ToList();
+            return get;
+        }
+
+        public List<Procurement> Get()
+        {
+            var get = myContext.Procurements.Include("Item").Include("TypeItem").Where(x => x.IsDelete == false).ToList();
+            return get;
         }
     }
 }
