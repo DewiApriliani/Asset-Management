@@ -12,6 +12,8 @@ namespace DataAccess.Models
     [Table("TB_T_Procurement")]
     public class Procurement : BaseModel
     {
+        public Procurement() { }
+
         public int Admin_Id { get; set; }
         public string Name_Procurement { get; set; }
         public string Description { get; set; }
@@ -25,6 +27,10 @@ namespace DataAccess.Models
         [ForeignKey("Item")]
         public int Item_Id { get; set; }
         public Item Item { get; set; }
+
+        [ForeignKey("TypeItem")]
+        public int TypeItem_Id { get; set; }
+        public TypeItem TypeItem { get; set; }
 
         public Procurement(ProcurementVM procurementVM)
         {

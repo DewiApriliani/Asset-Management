@@ -21,7 +21,6 @@ namespace Common.Repository.Application
             return get;
         }
 
-
         public bool Insert(ParameterVM ParameterVM)
         {
             var push = new Parameter(ParameterVM);
@@ -37,7 +36,6 @@ namespace Common.Repository.Application
             }
             return status;
         }
-
 
         public bool Delete(int id)
         {
@@ -55,8 +53,6 @@ namespace Common.Repository.Application
             }
         }
 
-
-
         public bool Update(int id, ParameterVM ParameterVM)
         {
             var get = Get(id);
@@ -71,6 +67,12 @@ namespace Common.Repository.Application
             {
                 return false;
             }
+        }
+
+        public List<Parameter> Get()
+        {
+            var get = myContext.Parameters.Where(x => x.IsDelete == false).ToList();
+            return get;
         }
     }
 }

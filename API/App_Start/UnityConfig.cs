@@ -25,6 +25,11 @@ namespace API
             container.RegisterType<IParameterRepository, ParameterRepository>();
             container.RegisterType<ITypeItemRepository, TypeItemRepository>();
             container.RegisterType<ILocationRepository, LocationRepository>();
+            container.RegisterType<IConditionRepository, ConditionRepository>();
+            container.RegisterType<IItemRepository, ItemRepository>();
+            container.RegisterType<IProcurementRepository, ProcurementRepository>();
+            container.RegisterType<ILoaningRepository, LoaningRepository>();
+
 
             //this is for service
             container.RegisterType<IHandoverService, HandoverService>();
@@ -32,6 +37,11 @@ namespace API
             container.RegisterType<IParameterService, ParameterService>();
             container.RegisterType<ITypeItemService, TypeItemService>();
             container.RegisterType<ILocationService, LocationService>();
+            container.RegisterType<IConditionService, ConditionService>();
+            container.RegisterType<IItemService, ItemService>();
+            container.RegisterType<IProcurementService, ProcurementService>();
+            container.RegisterType<ILoaningService, LoaningService>();
+
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

@@ -10,6 +10,7 @@ namespace BusinessLogic.Service
 {
    public interface IParameterService
     {
+        List<Parameter> Get();
         Parameter Get(int id);
         bool Insert(ParameterVM parameterVM);
         bool Update(int id, ParameterVM parameterVM);

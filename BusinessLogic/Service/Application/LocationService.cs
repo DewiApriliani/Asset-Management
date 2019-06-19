@@ -11,21 +11,17 @@ namespace BusinessLogic.Service.Application
 {
    public class LocationService : ILocationService
     {
+        private readonly ILocationRepository iLocationRepository;
+        bool status = false;
         public LocationService() { }
-
-        ILocationRepository iLocationRepository;
-
         public LocationService(ILocationRepository _iLocationRepository)
         {
-            this.iLocationRepository = _iLocationRepository;
+            iLocationRepository = _iLocationRepository;
         }
-
-        private readonly ILocationRepository iLocationService;
-        bool status = false;
 
         public Location Get(int id)
         {
-            return iLocationService.Get(id);
+            return iLocationRepository.Get(id);
         }
 
         public bool Insert(LocationVM locationVM)
@@ -40,18 +36,23 @@ namespace BusinessLogic.Service.Application
             }
             else
             {
-                return iLocationService.Insert(locationVM);
+                return iLocationRepository.Insert(locationVM);
             }
         }
 
         public bool Update(int id, LocationVM locationVM)
         {
-            return iLocationService.Update(id, locationVM);
+            return iLocationRepository.Update(id, locationVM);
         }
 
         public bool Delete(int id)
         {
-            return iLocationService.Delete(id);
+            return iLocationRepository.Delete(id);
+        }
+
+        public List<Location> Get()
+        {
+            return iLocationRepository.Get();
         }
     }
 }

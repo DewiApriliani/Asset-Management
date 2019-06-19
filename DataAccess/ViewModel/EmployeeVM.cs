@@ -8,9 +8,9 @@ namespace DataAccess.ViewModel
 {
    public  class EmployeeVM
     {
-        public EmployeeVM(int employee_Id, int user_Id, int admin_Id, int divhead_Id)
+        public EmployeeVM(int id, int user_Id, int admin_Id, int divhead_Id)
         {
-            this.Employee_Id = Employee_Id;
+            this.Id = id;
             this.User_Id = User_Id;
             this.Admin_Id = Admin_Id;
             this.Divhead_Id = Divhead_Id;
@@ -20,7 +20,7 @@ namespace DataAccess.ViewModel
 
         public EmployeeVM () { }
 
-        public int Employee_Id { get; set; }
+        public int Id { get; set; }
         public int User_Id { get; set; }
         public int Admin_Id { get; set; }
         public int Divhead_Id { get; set; }

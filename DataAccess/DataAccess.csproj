@@ -51,23 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyContext.cs" />
-    <Compile Include="Migrations\201906190155575_AssetManagementDB.cs" />
-    <Compile Include="Migrations\201906190155575_AssetManagementDB.Designer.cs">
-      <DependentUpon>201906190155575_AssetManagementDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906190201342_AssetManagementDB1.cs" />
-    <Compile Include="Migrations\201906190201342_AssetManagementDB1.Designer.cs">
-      <DependentUpon>201906190201342_AssetManagementDB1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906190210482_AssetManagementDB2.cs" />
-    <Compile Include="Migrations\201906190210482_AssetManagementDB2.Designer.cs">
-      <DependentUpon>201906190210482_AssetManagementDB2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906190625535_AssetManagementDB3.cs" />
-    <Compile Include="Migrations\201906190625535_AssetManagementDB3.Designer.cs">
-      <DependentUpon>201906190625535_AssetManagementDB3.cs</DependentUpon>
+    <Compile Include="Migrations\201906191320261_AssetManagement.cs" />
+    <Compile Include="Migrations\201906191320261_AssetManagement.Designer.cs">
+      <DependentUpon>201906191320261_AssetManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Condition.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Handover.cs" />
     <Compile Include="Models\Item.cs" />
@@ -79,6 +68,7 @@
     <Compile Include="Models\TypeItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ConditionVM.cs" />
     <Compile Include="ViewModel\EmployeeVM.cs" />
     <Compile Include="ViewModel\HandoverVM.cs" />
     <Compile Include="ViewModel\ItemVM.cs" />
@@ -100,17 +90,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906190155575_AssetManagementDB.resx">
-      <DependentUpon>201906190155575_AssetManagementDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906190201342_AssetManagementDB1.resx">
-      <DependentUpon>201906190201342_AssetManagementDB1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906190210482_AssetManagementDB2.resx">
-      <DependentUpon>201906190210482_AssetManagementDB2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906190625535_AssetManagementDB3.resx">
-      <DependentUpon>201906190625535_AssetManagementDB3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906191320261_AssetManagement.resx">
+      <DependentUpon>201906191320261_AssetManagement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

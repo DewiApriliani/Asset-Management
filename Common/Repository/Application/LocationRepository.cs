@@ -69,5 +69,11 @@ namespace Common.Repository.Application
                 return false;
             }
         }
+
+        public List<Location> Get()
+        {
+            var get = myContext.Locations.Where(x => x.IsDelete == false).ToList();
+            return get;
+        }
     }
 }

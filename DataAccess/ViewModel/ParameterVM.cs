@@ -8,14 +8,15 @@ namespace DataAccess.ViewModel
 {
    public class ParameterVM
     {
+        public ParameterVM() { }
+
         public ParameterVM(string name_Validation, string punishment)
         {
             this.Name_Validation = Name_Validation;
             this.Punishment = Punishment;
         }
 
-        public ParameterVM() { }
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Name_Validation { get; set; }
         public string Punishment { get; set; }
     }

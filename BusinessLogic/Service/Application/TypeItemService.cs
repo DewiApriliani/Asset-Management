@@ -11,21 +11,17 @@ namespace BusinessLogic.Service.Application
 {
     public class TypeItemService : ITypeItemService
     {
+        private readonly ITypeItemRepository iTypeItemRepository;
+        bool status = false;
         public TypeItemService() { }
-
-        ITypeItemRepository iTypeItemRepository;
-
         public TypeItemService(ITypeItemRepository _iTypeItemRepository)
         {
-            this.iTypeItemRepository = _iTypeItemRepository;
+            iTypeItemRepository = _iTypeItemRepository;
         }
-
-        private readonly ITypeItemRepository iTypeItemService;
-        bool status = false;
 
         public TypeItem Get(int id)
         {
-            return iTypeItemService.Get(id);
+            return iTypeItemRepository.Get(id);
         }
 
         public bool Insert(TypeItemVM typeItemVM)
@@ -36,19 +32,19 @@ namespace BusinessLogic.Service.Application
             }
             else
             {
-                return iTypeItemService.Insert(typeItemVM);
+                return iTypeItemRepository.Insert(typeItemVM);
             }
         }
 
         public bool Delete(int id)
         {
-            return iTypeItemService.Delete(id);
+            return iTypeItemRepository.Delete(id);
         }
 
 
         public bool Update(int id, TypeItemVM typeItemVM)
         {
-            return iTypeItemService.Update(id, typeItemVM);
+            return iTypeItemRepository.Update(id, typeItemVM);
         }
 
         public List<TypeItem> GetSearch(string values)
@@ -58,7 +54,7 @@ namespace BusinessLogic.Service.Application
 
         public List<TypeItem> Get()
         {
-            return iTypeItemService.Get();
+            return iTypeItemRepository.Get();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Common.Repository
 {
     public interface IParameterRepository
     {
+        List<Parameter> Get();
         Parameter Get(int id);
         bool Insert(ParameterVM ParameterVM);
         bool Update(int id, ParameterVM ParameterVM);

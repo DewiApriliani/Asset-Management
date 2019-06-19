@@ -12,6 +12,8 @@ namespace DataAccess.Models
     [Table("TB_M_Location")]
     public class Location : BaseModel
     {
+        public Location() { }
+
         public string Name_Location { get; set; }
         public string Floor { get; set; }
 

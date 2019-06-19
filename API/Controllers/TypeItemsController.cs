@@ -17,18 +17,16 @@ namespace API.Controllers
     public class TypeItemsController : ApiController
     {
         private MyContext db = new MyContext();
-
-
-
-        public TypeItemsController() { }
-
         private readonly ITypeItemService iTypeItemService;
-        bool status = false;
-
-        // Konstruktor
+        public TypeItemsController() { }
         public TypeItemsController(ITypeItemService _iTypeItemService)
         {
-            this.iTypeItemService = _iTypeItemService;
+            iTypeItemService = _iTypeItemService;
+        }
+        // GET: api/TypeItem
+        public List<TypeItem> GetTypeItem()
+        {
+            return iTypeItemService.Get();
         }
 
         // GET: api/TypeItems

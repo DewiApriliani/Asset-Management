@@ -12,21 +12,17 @@ namespace BusinessLogic.Service.Application
 {
     public class HandoverService : IHandoverService
     {
+        private readonly IHandoverRepository iHandoverRepository;
+        bool status = false;
         public HandoverService() { }
-
-        IHandoverRepository iHandoverRepository;
-
         public HandoverService(IHandoverRepository _iHandoverRepository)
         {
-            this.iHandoverRepository = _iHandoverRepository;
+            iHandoverRepository = _iHandoverRepository;
         }
-
-        private readonly IHandoverRepository iHandoverService;
-        bool status = false;
 
         public Handover Get(int id)
         {
-            return iHandoverService.Get(id);
+            return iHandoverRepository.Get(id);
         }
 
         public bool Insert(HandoverVM handoverVM)
@@ -69,13 +65,13 @@ namespace BusinessLogic.Service.Application
             }
             else
             {
-                return iHandoverService.Insert(handoverVM);
+                return iHandoverRepository.Insert(handoverVM);
             }
         }
 
         public bool Delete(int id)
         {
-            return iHandoverService.Delete(id);
+            return iHandoverRepository.Delete(id);
         }
 
         public List<Handover> GetSearch(string values)

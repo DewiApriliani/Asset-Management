@@ -17,11 +17,8 @@ namespace API.Controllers
     public class ItemsController : ApiController
     {
         private MyContext db = new MyContext();
-
-        public ItemsController() { }
-
         private readonly IItemService iItemService;
-
+        public ItemsController() { }
         public ItemsController(IItemService _iItemService)
         {
             iItemService = _iItemService;

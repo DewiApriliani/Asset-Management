@@ -18,20 +18,13 @@ namespace API.Controllers
     public class HandoversController : ApiController
     {
         private MyContext db = new MyContext();
-
-
-
-        public HandoversController() { }
-
         private readonly IHandoverService iHandoverService;
-        bool status = false;
-
-        // Konstruktor
+        public HandoversController() { }
         public HandoversController(IHandoverService _iHandoverService)
         {
-            this.iHandoverService = _iHandoverService;
+            iHandoverService = _iHandoverService;
         }
-
+        
         // GET: api/Handovers
         public List<Handover> GetHandovers()
         {

@@ -10,6 +10,7 @@ namespace Common.Repository
 {
    public interface ILocationRepository
     {
+        List<Location> Get();
         Location Get(int id);
         bool Insert(LocationVM LocationVM);
         bool Update(int id, LocationVM LocationVM);

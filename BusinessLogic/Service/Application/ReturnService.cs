@@ -11,21 +11,17 @@ namespace BusinessLogic.Service.Application
 {
     public class ReturnService : IReturnService
     {
+        private readonly IReturnRepository iReturnRepository;
+        bool status = false;
         public ReturnService() { }
-
-        IReturnRepository iReturnRepository;
-
         public ReturnService(IReturnRepository _iReturnRepository)
         {
-            this.iReturnRepository = _iReturnRepository;
+            iReturnRepository = _iReturnRepository;
         }
-
-        private readonly IReturnRepository iReturnService;
-        bool status = false;
 
         public Return Get(int id)
         {
-            return iReturnService.Get(id);
+            return iReturnRepository.Get(id);
         }
 
         public bool Insert(ReturnVM returnVM)
@@ -64,23 +60,23 @@ namespace BusinessLogic.Service.Application
             }
             else
             {
-                return iReturnService.Insert(returnVM);
+                return iReturnRepository.Insert(returnVM);
             }
         }
 
         public bool Delete(int id)
         {
-            return iReturnService.Delete(id);
+            return iReturnRepository.Delete(id);
         }
 
         public List<Return> Get()
         {
-            return iReturnService.Get();
+            return iReturnRepository.Get();
         }
 
         public bool Update(int id, ReturnVM returnVM)
         {
-            return iReturnService.Update(id, returnVM);
+            return iReturnRepository.Update(id, returnVM);
         }
     }
 }

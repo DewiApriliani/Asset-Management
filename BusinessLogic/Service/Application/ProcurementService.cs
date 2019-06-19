@@ -19,7 +19,6 @@ namespace BusinessLogic.Service.Application
             iProcurementRepository = _iProcurementRepository;
         }
 
-
         public List<Procurement> Get()
         {
             return iProcurementRepository.Get();

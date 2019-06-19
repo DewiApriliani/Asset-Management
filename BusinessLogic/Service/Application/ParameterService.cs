@@ -11,21 +11,17 @@ namespace BusinessLogic.Service.Application
 {
     public class ParameterService : IParameterService
     {
+        private readonly IParameterRepository iParameterRepository;
+        bool status = false;
         public ParameterService() { }
-
-        IParameterRepository iParameterRepository;
-
         public ParameterService(IParameterRepository _iParameterRepository)
         {
-            this.iParameterRepository = _iParameterRepository;
+            iParameterRepository = _iParameterRepository;
         }
-
-        private readonly IParameterRepository iParameterService;
-        bool status = false;
 
         public Parameter Get(int id)
         {
-            return iParameterService.Get(id);
+            return iParameterRepository.Get(id);
         }
 
         public bool Insert(ParameterVM parameterVM)
@@ -40,19 +36,23 @@ namespace BusinessLogic.Service.Application
             }
             else
             {
-                return iParameterService.Insert(parameterVM);
+                return iParameterRepository.Insert(parameterVM);
             }
         }
 
         public bool Update(int id, ParameterVM parameterVM)
         {
-            return iParameterService.Update(id, parameterVM);
+            return iParameterRepository.Update(id, parameterVM);
         }
 
         public bool Delete(int id)
         {
-            return iParameterService.Delete(id);
+            return iParameterRepository.Delete(id);
         }
-    
+
+        public List<Parameter> Get()
+        {
+            return iParameterRepository.Get();
+        }
     }
 }

@@ -91,7 +91,7 @@ namespace Common.Repository.Application
 
         public List<Loaning> Get()
         {
-            var get = myContext.Loanings.Include("Item").Include("TypeItem").Where(x => x.IsDelete == false).ToList();
+            var get = myContext.Loanings.Include("Item").Include("TypeItem").Where(x => x.Item_Id == x.Item.Id && x.TypeItem_Id == x.TypeItem.Id && x.IsDelete == false).ToList();
             return get;
         }
     }
