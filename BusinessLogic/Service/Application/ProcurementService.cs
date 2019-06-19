@@ -11,17 +11,14 @@ namespace BusinessLogic.Service.Application
 {
     public class ProcurementService : IProcurementService
     {
+        private readonly IProcurementRepository iProcurementRepository;
+        bool status = false;
         public ProcurementService() { }
-
-        IProcurementRepository iProcurementRepository;
-
         public ProcurementService(IProcurementRepository _iProcurementRepository)
         {
-            this.iProcurementRepository = _iProcurementRepository;
+            iProcurementRepository = _iProcurementRepository;
         }
 
-        private readonly IProcurementRepository iProcurementService;
-        bool status = false;
 
         public List<Procurement> Get()
         {

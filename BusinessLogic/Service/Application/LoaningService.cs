@@ -11,17 +11,13 @@ namespace BusinessLogic.Service.Application
 {
     public class LoaningService : ILoaningService
     {
+        private readonly ILoaningRepository iLoaningRepository;
+        bool status = false;
         public LoaningService() { }
-
-        ILoaningRepository iLoaningRepository;
-
         public LoaningService(ILoaningRepository _iLoaningRepository)
         {
-            this.iLoaningRepository = _iLoaningRepository;
+            iLoaningRepository = _iLoaningRepository;
         }
-
-        private readonly ILoaningRepository iLoaningService;
-        bool status = false;
 
         public List<Loaning> Get()
         {

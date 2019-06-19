@@ -77,3 +77,5 @@ C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\API\obj\Debug\API.csproj.Co
 C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\API\obj\Debug\API.csproj.CopyComplete
 C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\API\obj\Debug\API.dll
 C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\API\obj\Debug\API.pdb
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\API\obj\Debug\API.csprojAssemblyReference.cache
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\API\obj\Debug\API.csproj.CoreCompileInputs.cache

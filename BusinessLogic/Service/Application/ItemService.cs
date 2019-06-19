@@ -1,5 +1,4 @@
 ﻿using Common.Repository;
-using Common.Repository.Application;
 using DataAccess.Models;
 using DataAccess.ViewModel;
 using System;
@@ -12,17 +11,13 @@ namespace BusinessLogic.Service.Application
 {
     public class ItemService : IItemService
     {
+        private readonly IItemRepository iItemRepository;
+        bool status = false;
         public ItemService() { }
-
-        IItemRepository iItemRepository;
-
         public ItemService(IItemRepository _iItemRepository)
         {
-            this.iItemRepository = _iItemRepository;
+            iItemRepository = _iItemRepository;
         }
-
-        private readonly IItemRepository iItemService;
-        bool status = false;
 
         public List<Item> Get()
         {

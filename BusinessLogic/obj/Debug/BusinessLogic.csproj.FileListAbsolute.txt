@@ -10,3 +10,5 @@ C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\BusinessLogic\obj\Debug\Bus
 C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\BusinessLogic\obj\Debug\BusinessLogic.exe
 C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache

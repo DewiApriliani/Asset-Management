@@ -83,7 +83,6 @@ namespace Common.Repository.Application
             var get = myContext.Items.Include("TypeItem").Where
                 (x => (x.Id.ToString().Contains(values)) || 
                 (x.Name_Item.Contains(values)) ||
-                (x.Condition.Contains(values)) ||
                 (x.Stock.ToString().Contains(values)) ||
                 (x.Year_Procurement.ToString().Contains(values)) ||
                 (x.Merk.Contains(values)) ||

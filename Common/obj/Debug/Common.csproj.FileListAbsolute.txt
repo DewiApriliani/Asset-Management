@@ -1,2 +1,4 @@
 C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\Common\obj\Debug\Common.csprojAssemblyReference.cache
 C:\Users\Irfan\Desktop\Bootcamp MII\Asset-Management\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache

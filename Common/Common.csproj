@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Application\ConditionRepository.cs" />
+    <Compile Include="Repository\IConditionRepository.cs" />
     <Compile Include="Repository\Application\ItemRepository.cs" />
     <Compile Include="Repository\Application\LoaningRepository.cs" />
     <Compile Include="Repository\Application\ProcurementRepository.cs" />

@@ -16,7 +16,6 @@ namespace DataAccess.Models
         public string Merk { get; set; }
         public string Description { get; set; }
         public string Photo_Item { get; set; }
-        public string Condition { get; set; }
         public DateTimeOffset Year_Procurement { get; set; }
         public int Stock { get; set; }
         public double Price { get; set; }
@@ -35,7 +34,6 @@ namespace DataAccess.Models
             this.Merk = itemVM.Merk;
             this.Description = itemVM.Description;
             this.Photo_Item = itemVM.Photo_Item;
-            this.Condition = itemVM.Condition;
             this.Year_Procurement = itemVM.Year_Procurement;
             this.Stock = itemVM.Stock;
             this.Price = itemVM.Price;
@@ -49,7 +47,6 @@ namespace DataAccess.Models
             this.Merk = itemVM.Merk;
             this.Description = itemVM.Description;
             this.Photo_Item = itemVM.Photo_Item;
-            this.Condition = itemVM.Condition;
             this.Year_Procurement = itemVM.Year_Procurement;
             this.Stock = itemVM.Stock;
             this.Price = itemVM.Price;
