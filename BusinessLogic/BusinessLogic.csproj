@@ -52,11 +52,28 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Application\ItemService.cs" />
+    <Compile Include="Service\Application\LoaningService.cs" />
+    <Compile Include="Service\Application\ProcurementService.cs" />
+    <Compile Include="Service\IItemService.cs" />
+    <Compile Include="Service\ILoaningService.cs" />
+    <Compile Include="Service\IProcurementService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6B3D609E-A62B-444B-9117-CAE6A18AB404}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{22818FA4-CEF1-4905-8461-871D207B6EEA}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

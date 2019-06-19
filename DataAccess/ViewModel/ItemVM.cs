@@ -10,7 +10,7 @@ namespace DataAccess.ViewModel
     {
         public ItemVM() { }
 
-        public ItemVM(int name_Item, string merk, string description, string photo_Item, string condition, DateTimeOffset year_Procurement, int stock, double price, int typeItem_Id, int location_Id)
+        public ItemVM(string name_Item, string merk, string description, string photo_Item, string condition, DateTimeOffset year_Procurement, int stock, double price, int typeItem_Id, int location_Id)
         {
             this.Name_Item = name_Item;
             this.Merk = merk;
@@ -25,7 +25,7 @@ namespace DataAccess.ViewModel
         }
 
         public int Id { get; set; }
-        public int Name_Item { get; set; }
+        public string Name_Item { get; set; }
         public string Merk { get; set; }
         public string Description { get; set; }
         public string Photo_Item { get; set; }

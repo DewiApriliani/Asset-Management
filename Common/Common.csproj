@@ -52,10 +52,27 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Application\ItemRepository.cs" />
+    <Compile Include="Repository\Application\LoaningRepository.cs" />
+    <Compile Include="Repository\Application\ProcurementRepository.cs" />
+    <Compile Include="Repository\IItemRepository.cs" />
+    <Compile Include="Repository\ILoaningRepository.cs" />
+    <Compile Include="Repository\IProcurementRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{5A23ACB6-743D-4A43-99F5-CDE0669A83A7}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{22818FA4-CEF1-4905-8461-871D207B6EEA}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -51,7 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyContext.cs" />
+    <Compile Include="Migrations\201906190225141_AssetManagmenetDB.cs" />
+    <Compile Include="Migrations\201906190225141_AssetManagmenetDB.Designer.cs">
+      <DependentUpon>201906190225141_AssetManagmenetDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Handover.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Loaning.cs" />
@@ -81,6 +86,11 @@
       <Project>{5A23ACB6-743D-4A43-99F5-CDE0669A83A7}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906190225141_AssetManagmenetDB.resx">
+      <DependentUpon>201906190225141_AssetManagmenetDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

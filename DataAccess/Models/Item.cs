@@ -12,7 +12,7 @@ namespace DataAccess.Models
     [Table("TB_M_Item")]
     public class Item : BaseModel
     {
-        public int Name_Item { get; set; }
+        public string Name_Item { get; set; }
         public string Merk { get; set; }
         public string Description { get; set; }
         public string Photo_Item { get; set; }
