@@ -11,6 +11,8 @@ namespace BusinessLogic.Service
     public interface IHandoverService
     {
         Handover Get(int id);
+        List<Handover> GetSearch(string values);
+        List<Handover> Get();
         bool Insert(HandoverVM HandoverVM);
         bool Delete(int id);
     }

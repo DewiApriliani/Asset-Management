@@ -25,6 +25,7 @@ namespace DataAccess.ViewModel
 
         public ReturnVM() { }
 
+        public int Id { get; set; }
         public string Name_User { get; set; }
         public string Name_Item { get; set; }
         public int Quantity { get; set; }

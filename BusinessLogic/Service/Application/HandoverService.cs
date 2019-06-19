@@ -78,5 +78,14 @@ namespace BusinessLogic.Service.Application
             return iHandoverService.Delete(id);
         }
 
+        public List<Handover> GetSearch(string values)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Handover> Get()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

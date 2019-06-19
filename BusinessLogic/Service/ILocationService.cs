@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Service.Application
 {
-    interface ILocationService
+   public interface ILocationService
     {
         Location Get(int id);
         bool Insert(LocationVM LocationVM);

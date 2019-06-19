@@ -70,5 +70,15 @@ namespace Common.Repository.Application
                 return false;
             }
         }
+
+        public List<TypeItem> GetSearch(string values)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<TypeItem> Get()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

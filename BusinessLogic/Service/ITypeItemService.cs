@@ -11,6 +11,8 @@ namespace BusinessLogic.Service
     public interface ITypeItemService
     {
         TypeItem Get(int id);
+        List<TypeItem> GetSearch(string values);
+        List<TypeItem> Get();
         bool Insert(TypeItemVM TypeItemVM);
         bool Update(int id, TypeItemVM TypeItemVM);
         bool Delete(int id);

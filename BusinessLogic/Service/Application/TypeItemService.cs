@@ -50,5 +50,15 @@ namespace BusinessLogic.Service.Application
         {
             return iTypeItemService.Update(id, typeItemVM);
         }
+
+        public List<TypeItem> GetSearch(string values)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<TypeItem> Get()
+        {
+            return iTypeItemService.Get();
+        }
     }
 }
