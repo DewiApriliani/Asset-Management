@@ -23,6 +23,7 @@ namespace DataAccess.ViewModel
 
         public HandoverVM() { }
 
+        public string Id { get; set; }
         public string Descriptioan { get; set; }
         public string Name_User { get; set; }
         public string Name_Admin { get; set; }

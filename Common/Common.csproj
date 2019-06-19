@@ -52,20 +52,23 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Application\ConditionRepository.cs" />
-    <Compile Include="Repository\IConditionRepository.cs" />
-    <Compile Include="Repository\Application\ItemRepository.cs" />
-    <Compile Include="Repository\Application\LoaningRepository.cs" />
-    <Compile Include="Repository\Application\ProcurementRepository.cs" />
-    <Compile Include="Repository\IItemRepository.cs" />
-    <Compile Include="Repository\ILoaningRepository.cs" />
-    <Compile Include="Repository\IProcurementRepository.cs" />
+    <Compile Include="Repository\Application\HandoverRepository.cs" />
+    <Compile Include="Repository\Application\LocationRepository.cs" />
+    <Compile Include="Repository\Application\LoginRepository.cs" />
+    <Compile Include="Repository\Application\ParameterRepository.cs" />
+    <Compile Include="Repository\Application\ReturnRepository.cs" />
+    <Compile Include="Repository\Application\TypeItemRepository.cs" />
+    <Compile Include="Repository\IHandoverRepository.cs" />
+    <Compile Include="Repository\ILocationRepository.cs" />
+    <Compile Include="Repository\ILoginRepository.cs" />
+    <Compile Include="Repository\IParameterRepository.cs" />
+    <Compile Include="Repository\IReturnRepository.cs" />
+    <Compile Include="Repository\ITypeItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{5A23ACB6-743D-4A43-99F5-CDE0669A83A7}</Project>

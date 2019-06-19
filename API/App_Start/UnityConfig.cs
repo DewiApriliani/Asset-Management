@@ -17,17 +17,21 @@ namespace API
             // register all your components with the container here
             // it is NOT necessary to register your controllers
 
-            // e.g. container.RegisterType<ITestService, TestService>();
+            // e.g. 
 
-            //this is for Repository 
-            container.RegisterType<ILoaningRepository, LoaningRepository>();
-            container.RegisterType<IItemRepository, ItemRepository>();
-            container.RegisterType<IProcurementRepository, ProcurementRepository>();
+            //this is for repository
+            container.RegisterType<IHandoverRepository, HandoverRepository>();
+            container.RegisterType<IReturnRepository, ReturnRepository>();
+            container.RegisterType<IParameterRepository, ParameterRepository>();
+            container.RegisterType<ITypeItemRepository, TypeItemRepository>();
+            container.RegisterType<ILocationRepository, LocationRepository>();
 
-            //this is for Service
-            container.RegisterType<ILoaningService, LoaningService>();
-            container.RegisterType<IItemService, ItemService>();
-            container.RegisterType<IProcurementService, ProcurementService>();
+            //this is for service
+            container.RegisterType<IHandoverService, HandoverService>();
+            container.RegisterType<IReturnService, ReturnService>();
+            container.RegisterType<IParameterService, ParameterService>();
+            container.RegisterType<ITypeItemService, TypeItemService>();
+            container.RegisterType<ILocationService, LocationService>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

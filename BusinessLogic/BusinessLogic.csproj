@@ -52,14 +52,16 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\Application\ConditionService.cs" />
-    <Compile Include="Service\Application\ItemService.cs" />
-    <Compile Include="Service\Application\LoaningService.cs" />
-    <Compile Include="Service\Application\ProcurementService.cs" />
-    <Compile Include="Service\IConditionService.cs" />
-    <Compile Include="Service\IItemService.cs" />
-    <Compile Include="Service\ILoaningService.cs" />
-    <Compile Include="Service\IProcurementService.cs" />
+    <Compile Include="Service\Application\HandoverService.cs" />
+    <Compile Include="Service\Application\LocationService.cs" />
+    <Compile Include="Service\ILocationService.cs" />
+    <Compile Include="Service\Application\ParameterService.cs" />
+    <Compile Include="Service\Application\ReturnService.cs" />
+    <Compile Include="Service\Application\TypeItemService.cs" />
+    <Compile Include="Service\IHandoverService.cs" />
+    <Compile Include="Service\IParameterService.cs" />
+    <Compile Include="Service\IReturnService.cs" />
+    <Compile Include="Service\ITypeItemService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -75,7 +77,6 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,5 +1,4 @@
 ﻿using DataAccess.Models;
-using DataAccess.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +21,5 @@ namespace DataAccess.Context
         public DbSet<Return> Returns { get; set; }
         public DbSet<TypeItem> TypeItems { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Condition> Conditions { get; set; }
     }
 }

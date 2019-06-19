@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace DataAccess.ViewModel
 {
-    public class EmployeeVM
+   public  class EmployeeVM
     {
-        public EmployeeVM() { }
-
-
-        public EmployeeVM(int employee_Id, int user_Id, int admin_Id, int divhead_Id, string name_Admin, string name_User)
+        public EmployeeVM(int employee_Id, int user_Id, int admin_Id, int divhead_Id)
         {
-            this.Employee_Id = employee_Id;
-            this.User_Id = user_Id;
-            this.Admin_Id = admin_Id;
-            this.Divhead_Id = divhead_Id;
-            this.Name_Admin = name_Admin;
-            this.Name_User = name_User;
+            this.Employee_Id = Employee_Id;
+            this.User_Id = User_Id;
+            this.Admin_Id = Admin_Id;
+            this.Divhead_Id = Divhead_Id;
+            this.Name_Admin = Name_Admin;
+            this.Name_User = Name_User;
         }
+
+        public EmployeeVM () { }
 
         public int Employee_Id { get; set; }
         public int User_Id { get; set; }

@@ -15,7 +15,7 @@ namespace DataAccess.ViewModel
         }
 
         public ParameterVM() { }
-
+        public int id { get; set; }
         public string Name_Validation { get; set; }
         public string Punishment { get; set; }
     }

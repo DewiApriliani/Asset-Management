@@ -26,10 +26,6 @@ namespace DataAccess.Models
         public int Item_Id { get; set; }
         public Item Item { get; set; }
 
-        [ForeignKey("TypeItem")]
-        public int TypeItem_Id { get; set; }
-        public TypeItem TypeItem { get; set; }
-
         public Procurement(ProcurementVM procurementVM)
         {
             this.Name_Procurement = procurementVM.Name_Procurement;
