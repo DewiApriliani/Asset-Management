@@ -47,7 +47,6 @@ namespace DataAccess.Models
 
         public void Update(int id, ProcurementVM procurementVM)
         {
-            this.Id = procurementVM.Id;
             this.Name_Procurement = procurementVM.Name_Procurement;
             this.Description = procurementVM.Description;
             this.Price = procurementVM.Price;

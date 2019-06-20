@@ -83,5 +83,10 @@ namespace BusinessLogic.Service.Application
         {
             return iHandoverRepository.Get();
         }
+
+        public bool Update(int id, HandoverVM hanoverVM)
+        {
+            return iHandoverRepository.Update(id, hanoverVM);
+        }
     }
 }

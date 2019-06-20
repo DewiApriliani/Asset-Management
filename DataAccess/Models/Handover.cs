@@ -44,7 +44,6 @@ namespace DataAccess.Models
 
         public void Update(int id, HandoverVM HandoverVM)
         {
-            this.Id = id;
             this.Description = HandoverVM.Descriptioan;
             this.Name_User = HandoverVM.Name_User;
             this.Name_Admin = HandoverVM.Name_Admin;

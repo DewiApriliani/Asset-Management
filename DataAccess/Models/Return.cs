@@ -44,7 +44,6 @@ namespace DataAccess.Models
 
         public void Update(int id, ReturnVM ReturnVM)
         {
-            this.Id = id;
             this.Name_User = ReturnVM.Name_User;
             this.Name_Item = ReturnVM.Name_Item;
             this.Quantity = ReturnVM.Quantity;

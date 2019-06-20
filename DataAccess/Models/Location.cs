@@ -25,7 +25,6 @@ namespace DataAccess.Models
 
         public void Update(int id, LocationVM locationVM)
         {
-            this.Id = locationVM.Id;
             this.Name_Location = locationVM.Name_Location;
             this.Floor = locationVM.Floor;
             this.UpdateDate = DateTimeOffset.Now.ToLocalTime();

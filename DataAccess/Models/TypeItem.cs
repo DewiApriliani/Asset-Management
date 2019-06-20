@@ -24,7 +24,6 @@ namespace DataAccess.Models
 
         public void Update(int id, TypeItemVM typeItemVM)
         {
-            this.Id = typeItemVM.Id;
             this.Name_TypeItem = typeItemVM.Name_TypeItem;
             this.UpdateDate = DateTimeOffset.Now.ToLocalTime();
         }

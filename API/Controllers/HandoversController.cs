@@ -39,7 +39,10 @@ namespace API.Controllers
         }
 
         // PUT: api/Handovers/5
-
+       // public void UpdateHandover(int id, HandoverVM handoverVM)
+        //{
+        //    iHandoverService.Update(id, handoverVM);
+        //}
 
         // POST: api/Handovers
         public void insertHandover(HandoverVM Handover)

@@ -44,7 +44,6 @@ namespace DataAccess.Models
 
         public void Update(int id, ItemVM itemVM)
         {
-            this.Id = itemVM.Id;
             this.Name_Item = itemVM.Name_Item;
             this.Merk = itemVM.Merk;
             this.Description = itemVM.Description;
