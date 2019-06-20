@@ -14,7 +14,6 @@ namespace DataAccess.Models
     {
         public int Quantity { get; set; }
         public string Description { get; set; }
-        public string Last_Condition { get; set;}
         public DateTimeOffset Date_Return { get; set; }
         public int? User_Id { get; set; }
 
@@ -26,13 +25,16 @@ namespace DataAccess.Models
         public int TypeItem_Id { get; set; }
         public TypeItem TypeItem { get; set; }
 
+        [ForeignKey("Condition")]
+        public int Condition_Id { get; set; }
+        public Condition Condition { get; set; }
+
         public Return () { }
 
         public Return(ReturnVM ReturnVM)
         {
             this.Quantity = ReturnVM.Quantity;
             this.Description = ReturnVM.Description;
-            this.Last_Condition = ReturnVM.Last_Condition;
             this.Date_Return = ReturnVM.Date_Return;
             this.User_Id = User_Id;
             this.CreateDate = DateTimeOffset.Now.ToLocalTime();
@@ -40,10 +42,8 @@ namespace DataAccess.Models
 
         public void Update(int id, ReturnVM ReturnVM)
         {
-            this.Id = id;
             this.Quantity = ReturnVM.Quantity;
             this.Description = ReturnVM.Description;
-            this.Last_Condition = ReturnVM.Last_Condition;
             this.Date_Return = ReturnVM.Date_Return;
             this.User_Id = User_Id;
             this.UpdateDate = DateTimeOffset.Now.ToLocalTime();

@@ -26,7 +26,6 @@ namespace DataAccess.Models
 
         public void Update(int id, ParameterVM ParameterVM)
         {
-            this.Id = id;
             this.Name_Validation = ParameterVM.Name_Validation;
             this.Punishment = ParameterVM.Punishment;
             this.UpdateDate = DateTimeOffset.Now.ToLocalTime();

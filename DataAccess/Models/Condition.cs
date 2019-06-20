@@ -16,7 +16,6 @@ namespace DataAccess.Models
 
         public string Conditon { get; set; }
 
-
         public Condition(ConditionVM conditionVM)
         {
             this.Conditon = conditionVM.Condition;
@@ -24,7 +23,6 @@ namespace DataAccess.Models
 
         public void Update(int id, ConditionVM conditionVM)
         {
-            this.Id = conditionVM.Id;
             this.Conditon = conditionVM.Condition;
             
         }

@@ -26,9 +26,10 @@ C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\bin\Debug\Co
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
-C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.Migrations.AssetManagementDB.resources
-C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.cache
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.exe
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.Migrations.adding.resources
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.cache
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\DataAccess\obj\Debug\DataAccess.Migrations.addingFK.resources

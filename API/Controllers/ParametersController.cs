@@ -11,6 +11,7 @@ using System.Web.Http.Description;
 using BusinessLogic.Service;
 using DataAccess.Context;
 using DataAccess.Models;
+using DataAccess.ViewModel;
 
 namespace API.Controllers
 {
@@ -31,96 +32,27 @@ namespace API.Controllers
         }
 
         // GET: api/Parameters/5
-        [ResponseType(typeof(Parameter))]
-        public IHttpActionResult GetParameter(int id)
+        public Parameter GetParameter(int id)
         {
-            Parameter parameter = db.Parameters.Find(id);
-            if (parameter == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(parameter);
+            return iParameterService.Get(id);
         }
 
         // PUT: api/Parameters/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutParameter(int id, Parameter parameter)
+        public void UpdateParameter(int id, ParameterVM parameterVM)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != parameter.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(parameter).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ParameterExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            iParameterService.Update(id, parameterVM);
         }
 
         // POST: api/Parameters
-        [ResponseType(typeof(Parameter))]
-        public IHttpActionResult PostParameter(Parameter parameter)
+        public void InsertParameter(ParameterVM parameterVM)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Parameters.Add(parameter);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = parameter.Id }, parameter);
+            iParameterService.Insert(parameterVM);
         }
 
         // DELETE: api/Parameters/5
-        [ResponseType(typeof(Parameter))]
-        public IHttpActionResult DeleteParameter(int id)
+        public void DeleteParameter(int id)
         {
-            Parameter parameter = db.Parameters.Find(id);
-            if (parameter == null)
-            {
-                return NotFound();
-            }
-
-            db.Parameters.Remove(parameter);
-            db.SaveChanges();
-
-            return Ok(parameter);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool ParameterExists(int id)
-        {
-            return db.Parameters.Count(e => e.Id == id) > 0;
+            iParameterService.Delete(id);
         }
     }
 }

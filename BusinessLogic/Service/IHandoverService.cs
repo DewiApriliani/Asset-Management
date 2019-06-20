@@ -15,5 +15,6 @@ namespace BusinessLogic.Service
         List<Handover> Get();
         bool Insert(HandoverVM HandoverVM);
         bool Delete(int id);
+        bool Update(int id, HandoverVM HandoverVM);
     }
 }

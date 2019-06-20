@@ -37,7 +37,6 @@ namespace DataAccess.Models
 
         public void Update(int id, LoaningVM loaningVM)
         {
-            this.Id = loaningVM.Id;
             this.Date_Loaning = loaningVM.Date_Loaning;
             this.Date_Return = loaningVM.Date_Return;
             this.Quantity = loaningVM.Quantity;

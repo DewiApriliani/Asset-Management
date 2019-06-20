@@ -94,7 +94,7 @@ namespace Common.Repository.Application
 
         public List<Item> Get()
         {
-            var get = myContext.Items.Include("TypeItem").Include("Location").Where(x => x.Typeitem_Id == x.TypeItem.Id && x.Location_Id == x.Location.Id && x.IsDelete == false).ToList();
+            var get = myContext.Items.Include("TypeItem").Include("Location").Include("Condition").Where(x => x.Typeitem_Id == x.TypeItem.Id && x.Location_Id == x.Location.Id /*&& x.Condition_Id == x.Condition.Id*/ && x.IsDelete == false).ToList();
             return get;
         }
     }

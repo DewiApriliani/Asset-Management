@@ -77,5 +77,11 @@ namespace Common.Repository.Application
                 return false;
             }
         }
+
+        public List<Handover> Get()
+        {
+            var get = myContext.Handovers.Include("Loaning").Include("Return").Include("Loaning.Item").Include("Loaning.TypeItem").Include("Loaning.Item.Location").Where(x => x.Loaning_Id == x.Loaning.Id && x.Return_Id == x.Return.Id && x.IsDelete == false).ToList();
+            return get;
+        }
     }
 }

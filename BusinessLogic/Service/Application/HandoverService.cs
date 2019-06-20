@@ -73,7 +73,12 @@ namespace BusinessLogic.Service.Application
 
         public List<Handover> Get()
         {
-            throw new NotImplementedException();
+            return iHandoverRepository.Get();
+        }
+
+        public bool Update(int id, HandoverVM handoverVM)
+        {
+            return iHandoverRepository.Update(id, handoverVM);
         }
     }
 }

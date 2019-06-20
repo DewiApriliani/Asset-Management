@@ -11,6 +11,7 @@ using System.Web.Http.Description;
 using BusinessLogic.Service;
 using DataAccess.Context;
 using DataAccess.Models;
+using DataAccess.ViewModel;
 
 namespace API.Controllers
 {
@@ -30,96 +31,27 @@ namespace API.Controllers
         }
 
         // GET: api/Procurements/5
-        [ResponseType(typeof(Procurement))]
-        public IHttpActionResult GetProcurement(int id)
+        public Procurement GetProcurement(int id)
         {
-            Procurement procurement = db.Procurements.Find(id);
-            if (procurement == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(procurement);
+            return iProcurementService.Get(id);
         }
 
         // PUT: api/Procurements/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutProcurement(int id, Procurement procurement)
+        public void UpdateProcurement(int id, ProcurementVM procurementVM)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != procurement.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(procurement).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProcurementExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            iProcurementService.Update(id, procurementVM);
         }
 
         // POST: api/Procurements
-        [ResponseType(typeof(Procurement))]
-        public IHttpActionResult PostProcurement(Procurement procurement)
+        public void InsertProcurement(ProcurementVM procurementVM)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Procurements.Add(procurement);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = procurement.Id }, procurement);
+            iProcurementService.Insert(procurementVM);
         }
 
         // DELETE: api/Procurements/5
-        [ResponseType(typeof(Procurement))]
-        public IHttpActionResult DeleteProcurement(int id)
+        public void DeleteProcurement(int id)
         {
-            Procurement procurement = db.Procurements.Find(id);
-            if (procurement == null)
-            {
-                return NotFound();
-            }
-
-            db.Procurements.Remove(procurement);
-            db.SaveChanges();
-
-            return Ok(procurement);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool ProcurementExists(int id)
-        {
-            return db.Procurements.Count(e => e.Id == id) > 0;
+            iProcurementService.Delete(id);
         }
     }
 }

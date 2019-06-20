@@ -11,6 +11,7 @@ using System.Web.Http.Description;
 using DataAccess.Context;
 using DataAccess.Models;
 using BusinessLogic.Service;
+using DataAccess.ViewModel;
 
 namespace API.Controllers
 {
@@ -30,96 +31,27 @@ namespace API.Controllers
         }
 
         // GET: api/TypeItems/5
-        [ResponseType(typeof(TypeItem))]
-        public IHttpActionResult GetTypeItem(int id)
+        public TypeItem GetTypeItem(int id)
         {
-            TypeItem typeItem = db.TypeItems.Find(id);
-            if (typeItem == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(typeItem);
+            return iTypeItemService.Get(id);
         }
 
         // PUT: api/TypeItems/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutTypeItem(int id, TypeItem typeItem)
+        public void UpdateTypeItem(int id, TypeItemVM typeItemVM)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != typeItem.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(typeItem).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TypeItemExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            iTypeItemService.Update(id, typeItemVM);
         }
 
         // POST: api/TypeItems
-        [ResponseType(typeof(TypeItem))]
-        public IHttpActionResult PostTypeItem(TypeItem typeItem)
+        public void InsertTypeItem(TypeItemVM typeItemVM)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.TypeItems.Add(typeItem);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = typeItem.Id }, typeItem);
+            iTypeItemService.Insert(typeItemVM);
         }
 
         // DELETE: api/TypeItems/5
-        [ResponseType(typeof(TypeItem))]
-        public IHttpActionResult DeleteTypeItem(int id)
+        public void DeleteTypeItem(int id)
         {
-            TypeItem typeItem = db.TypeItems.Find(id);
-            if (typeItem == null)
-            {
-                return NotFound();
-            }
-
-            db.TypeItems.Remove(typeItem);
-            db.SaveChanges();
-
-            return Ok(typeItem);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool TypeItemExists(int id)
-        {
-            return db.TypeItems.Count(e => e.Id == id) > 0;
+            iTypeItemService.Delete(id);
         }
     }
 }

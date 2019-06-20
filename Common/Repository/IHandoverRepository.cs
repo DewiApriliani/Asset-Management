@@ -10,6 +10,7 @@ namespace Common.Repository
 {
     public interface IHandoverRepository
     {
+        List<Handover> Get();
         Handover Get(int id);
         bool Insert(HandoverVM HandoverVM);
         bool Update(int id, HandoverVM HandoverVM);

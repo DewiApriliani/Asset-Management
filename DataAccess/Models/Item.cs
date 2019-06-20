@@ -30,6 +30,10 @@ namespace DataAccess.Models
         public int Location_Id { get; set; }
         public Location Location { get; set; }
 
+        [ForeignKey("Condition")]
+        public int Condition_Id { get; set; }
+        public Condition Condition { get; set; }
+
         public Item (ItemVM itemVM)
         {
             this.Name_Item = itemVM.Name_Item;
@@ -44,7 +48,6 @@ namespace DataAccess.Models
 
         public void Update(int id, ItemVM itemVM)
         {
-            this.Id = itemVM.Id;
             this.Name_Item = itemVM.Name_Item;
             this.Merk = itemVM.Merk;
             this.Description = itemVM.Description;
