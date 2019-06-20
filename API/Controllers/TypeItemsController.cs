@@ -37,15 +37,27 @@ namespace API.Controllers
         }
 
         // PUT: api/TypeItems/5
-        public void UpdateTypeItem(int id, TypeItemVM typeItemVM)
+        public HttpResponseMessage UpdateTypeItem(int id, TypeItemVM typeItemVM)
         {
-            iTypeItemService.Update(id, typeItemVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iTypeItemService.Update(id, typeItemVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/TypeItems
-        public void InsertTypeItem(TypeItemVM typeItemVM)
+        public HttpResponseMessage InsertTypeItem(TypeItemVM typeItemVM)
         {
-            iTypeItemService.Insert(typeItemVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iTypeItemService.Insert(typeItemVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/TypeItems/5

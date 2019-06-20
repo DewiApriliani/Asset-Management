@@ -38,15 +38,27 @@ namespace API.Controllers
         }
 
         // PUT: api/Loanings/5
-        public void UpdateLoaning(int id, LoaningVM loaningVM)
+        public HttpResponseMessage UpdateLoaning(int id, LoaningVM loaningVM)
         {
-            iLoaningService.Update(id, loaningVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLoaningService.Update(id, loaningVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Loanings
-        public void InsertLoaning(LoaningVM loaningVM)
+        public HttpResponseMessage InsertLoaning(LoaningVM loaningVM)
         {
-            iLoaningService.Insert(loaningVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLoaningService.Insert(loaningVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Loanings/5

@@ -37,15 +37,27 @@ namespace API.Controllers
         }
 
         // PUT: api/Procurements/5
-        public void UpdateProcurement(int id, ProcurementVM procurementVM)
+        public HttpResponseMessage UpdateProcurement(int id, ProcurementVM procurementVM)
         {
-            iProcurementService.Update(id, procurementVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iProcurementService.Update(id, procurementVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Procurements
-        public void InsertProcurement(ProcurementVM procurementVM)
+        public HttpResponseMessage InsertProcurement(ProcurementVM procurementVM)
         {
-            iProcurementService.Insert(procurementVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iProcurementService.Insert(procurementVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Procurements/5

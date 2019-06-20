@@ -38,15 +38,27 @@ namespace API.Controllers
         }
 
         // PUT: api/Parameters/5
-        public void UpdateParameter(int id, ParameterVM parameterVM)
+        public HttpResponseMessage UpdateParameter(int id, ParameterVM parameterVM)
         {
-            iParameterService.Update(id, parameterVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iParameterService.Update(id, parameterVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Parameters
-        public void InsertParameter(ParameterVM parameterVM)
+        public HttpResponseMessage InsertParameter(ParameterVM parameterVM)
         {
-            iParameterService.Insert(parameterVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iParameterService.Insert(parameterVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Parameters/5

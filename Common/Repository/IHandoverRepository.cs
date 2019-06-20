@@ -12,7 +12,6 @@ namespace Common.Repository
     {
         List<Handover> Get();
         Handover Get(int id);
-        List<Handover> Get();
         bool Insert(HandoverVM HandoverVM);
         bool Update(int id, HandoverVM HandoverVM);
         bool Delete(int id);

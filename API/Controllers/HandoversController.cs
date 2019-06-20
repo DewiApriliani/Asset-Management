@@ -25,7 +25,7 @@ namespace API.Controllers
         {
             iHandoverService = _iHandoverService;
         }
-        
+
         // GET: api/Handovers
         public List<Handover> GetHandovers()
         {
@@ -39,16 +39,29 @@ namespace API.Controllers
         }
 
         // PUT: api/Handovers/5
-        public void UpdateHandover(int id, HandoverVM handoverVM)
+        public HttpResponseMessage UpdateHandover(int id, HandoverVM handoverVM)
         {
-            iHandoverService.Update(id, handoverVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iHandoverService.Update(id, handoverVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Handovers
-        public void InsertHandover(HandoverVM handoverVM)
+        public HttpResponseMessage InsertHandover(HandoverVM handoverVM)
         {
-            iHandoverService.Insert(handoverVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iHandoverService.Insert(handoverVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
+
 
         // DELETE: api/Handovers/5
         public void DeleteHandover(int id)

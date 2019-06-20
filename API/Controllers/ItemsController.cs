@@ -32,21 +32,35 @@ namespace API.Controllers
         }
 
         // GET: api/Items/5
-        public Item GetItem(int id)
+        public  Item GetItem(int id)
         {
             return iItemService.Get(id);
         }
 
         // PUT: api/Items/5
-        public void UpdateItem(int id, ItemVM itemVM)
+        public HttpResponseMessage UpdateItem(int id, ItemVM itemVM)
         {
-            iItemService.Update(id, itemVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iItemService.Update(id, itemVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Items
-        public void InsertItem(ItemVM itemVM)
+        public HttpResponseMessage InsertItem(ItemVM itemVM)
         {
-            iItemService.Insert(itemVM);
+
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iItemService.Insert(itemVM);
+            if (result)
+                if (result)
+                {
+                    message = Request.CreateResponse(HttpStatusCode.Created);
+                }
+            return message;
         }
 
         // DELETE: api/Items/5

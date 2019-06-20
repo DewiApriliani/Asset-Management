@@ -38,15 +38,27 @@ namespace API.Controllers
         }
 
         // PUT: api/Returns/5
-        public void UpdateReturn(int id, ReturnVM returnVM)
+        public HttpResponseMessage UpdateReturn(int id, ReturnVM returnVM)
         {
-            iReturnService.Update(id, returnVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iReturnService.Update(id, returnVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Returns
-        public void InsertRetrun(ReturnVM returnVM)
+        public HttpResponseMessage InsertRetrun(ReturnVM returnVM)
         {
-            iReturnService.Insert(returnVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iReturnService.Insert(returnVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Returns/5
