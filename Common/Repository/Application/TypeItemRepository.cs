@@ -78,7 +78,8 @@ namespace Common.Repository.Application
 
         public List<TypeItem> Get()
         {
-            throw new NotImplementedException();
+            var get = myContext.TypeItems.Where(x => x.IsDelete == false).ToList();
+            return get;
         }
     }
 }

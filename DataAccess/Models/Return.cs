@@ -12,26 +12,26 @@ namespace DataAccess.Models
     [Table("TB_T_Return")]
     public class Return : BaseModel
     {
-        public string Name_User { get; set; }
-        public string Name_Item { get; set; }
         public int Quantity { get; set; }
-        public string Status { get; set; }
+        public string Description { get; set; }
         public string Last_Condition { get; set;}
         public DateTimeOffset Date_Return { get; set; }
-        public int User_Id { get; set; }
+        public int? User_Id { get; set; }
 
         [ForeignKey("Item")]
         public int Item_Id { get; set; }
         public Item Item { get; set; }
 
+        [ForeignKey("TypeItem")]
+        public int TypeItem_Id { get; set; }
+        public TypeItem TypeItem { get; set; }
+
         public Return () { }
 
         public Return(ReturnVM ReturnVM)
         {
-            this.Name_User = ReturnVM.Name_User;
-            this.Name_Item = ReturnVM.Name_Item;
             this.Quantity = ReturnVM.Quantity;
-            this.Status = ReturnVM.Status;
+            this.Description = ReturnVM.Description;
             this.Last_Condition = ReturnVM.Last_Condition;
             this.Date_Return = ReturnVM.Date_Return;
             this.User_Id = User_Id;
@@ -41,10 +41,8 @@ namespace DataAccess.Models
         public void Update(int id, ReturnVM ReturnVM)
         {
             this.Id = id;
-            this.Name_User = ReturnVM.Name_User;
-            this.Name_Item = ReturnVM.Name_Item;
             this.Quantity = ReturnVM.Quantity;
-            this.Status = ReturnVM.Status;
+            this.Description = ReturnVM.Description;
             this.Last_Condition = ReturnVM.Last_Condition;
             this.Date_Return = ReturnVM.Date_Return;
             this.User_Id = User_Id;

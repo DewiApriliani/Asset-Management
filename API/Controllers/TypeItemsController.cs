@@ -24,12 +24,6 @@ namespace API.Controllers
             iTypeItemService = _iTypeItemService;
         }
         // GET: api/TypeItem
-        public List<TypeItem> GetTypeItem()
-        {
-            return iTypeItemService.Get();
-        }
-
-        // GET: api/TypeItems
         public List<TypeItem> GetTypeItems()
         {
             return iTypeItemService.Get();

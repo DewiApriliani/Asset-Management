@@ -52,23 +52,11 @@ namespace BusinessLogic.Service.Application
             {
                 return status;
             }
-            else if (string.IsNullOrWhiteSpace(procurementVM.Name_Item))
-            {
-                return status;
-            }
             else if (string.IsNullOrWhiteSpace(Convert.ToString(procurementVM.Date_Procurement)))
             {
                 return status;
             }
-            else if (string.IsNullOrWhiteSpace(procurementVM.Name_Admin))
-            {
-                return status;
-            }
             else if (string.IsNullOrWhiteSpace(Convert.ToString(procurementVM.Quantity)))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(procurementVM.Status))
             {
                 return status;
             }

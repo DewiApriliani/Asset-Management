@@ -48,22 +48,6 @@ namespace BusinessLogic.Service.Application
             {
                 return status;
             }
-            else if (string.IsNullOrWhiteSpace(loaningVM.Name_User))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(loaningVM.Name_Item))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(Convert.ToString(loaningVM.Status)))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(loaningVM.Status))
-            {
-                return status;
-            }
             else if (string.IsNullOrWhiteSpace(Convert.ToString(loaningVM.Item_Id)))
             {
                 return status;

@@ -26,19 +26,7 @@ namespace BusinessLogic.Service.Application
 
         public bool Insert(ReturnVM returnVM)
         {
-            if (string.IsNullOrWhiteSpace(Convert.ToString(returnVM.Name_User)))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(Convert.ToString(returnVM.Name_Item)))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(Convert.ToString(returnVM.Quantity)))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(Convert.ToString(returnVM.Status)))
+            if (string.IsNullOrWhiteSpace(Convert.ToString(returnVM.Quantity)))
             {
                 return status;
             }

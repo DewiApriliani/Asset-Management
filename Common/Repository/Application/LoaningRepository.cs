@@ -82,7 +82,7 @@ namespace Common.Repository.Application
         {
             var get = myContext.Loanings.Include("Item").Where
                 (x => (x.Item_Id.ToString().Contains(values)) ||
-                (x.Name_Item.Contains(values)) ||
+                (x.Item.Name_Item.Contains(values)) ||
                 (x.Quantity.ToString().Contains(values)) ||
                 x.Id.ToString().Contains(values) &&
                 x.IsDelete == false).ToList();
@@ -91,7 +91,7 @@ namespace Common.Repository.Application
 
         public List<Loaning> Get()
         {
-            var get = myContext.Loanings.Include("Item").Include("TypeItem").Where(x => x.Item_Id == x.Item.Id && x.TypeItem_Id == x.TypeItem.Id && x.IsDelete == false).ToList();
+            var get = myContext.Loanings.Include("Item").Include("TypeItem").Include("Item.Location").Where(x => x.Item_Id == x.Item.Id && x.TypeItem_Id == x.TypeItem.Id && x.IsDelete == false).ToList();
             return get;
         }
     }

@@ -31,14 +31,6 @@ namespace BusinessLogic.Service.Application
             {
                 return status;
             }
-            else if (string.IsNullOrWhiteSpace(Convert.ToString(handoverVM.Name_User)))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(Convert.ToString(handoverVM.Name_Admin)))
-            {
-                return status;
-            }
             else if (string.IsNullOrWhiteSpace(Convert.ToString(handoverVM.Date_Handover)))
             {
                 return status;

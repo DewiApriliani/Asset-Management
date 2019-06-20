@@ -14,15 +14,12 @@ namespace DataAccess.Models
     {
         public Procurement() { }
 
-        public int Admin_Id { get; set; }
+        public int? Admin_Id { get; set; }
         public string Name_Procurement { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
-        public string Name_Item { get; set; }
         public DateTimeOffset Date_Procurement { get; set; }
-        public string Name_Admin { get; set; }
         public int Quantity { get; set; }
-        public string Status { get; set; }
         
         [ForeignKey("Item")]
         public int Item_Id { get; set; }
@@ -37,11 +34,8 @@ namespace DataAccess.Models
             this.Name_Procurement = procurementVM.Name_Procurement;
             this.Description = procurementVM.Description;
             this.Price = procurementVM.Price;
-            this.Name_Item = procurementVM.Name_Item;
             this.Date_Procurement = procurementVM.Date_Procurement;
-            this.Name_Admin = procurementVM.Name_Admin;
             this.Quantity = procurementVM.Quantity;
-            this.Status = procurementVM.Status;
             this.CreateDate = DateTimeOffset.Now.ToLocalTime();
         }
 
@@ -51,11 +45,8 @@ namespace DataAccess.Models
             this.Name_Procurement = procurementVM.Name_Procurement;
             this.Description = procurementVM.Description;
             this.Price = procurementVM.Price;
-            this.Name_Item = procurementVM.Name_Item;
             this.Date_Procurement = procurementVM.Date_Procurement;
-            this.Name_Admin = procurementVM.Name_Admin;
             this.Quantity = procurementVM.Quantity;
-            this.Status = procurementVM.Status;
             this.UpdateDate = DateTimeOffset.Now.ToLocalTime();
         }
 

@@ -82,7 +82,7 @@ namespace Common.Repository.Application
         {
             var get = myContext.Procurements.Include("Item").Where
                 (x => (x.Item_Id.ToString().Contains(values)) ||
-                (x.Name_Item.Contains(values)) ||
+                (x.Item.Name_Item.Contains(values)) ||
                 (x.Price.ToString().Contains(values)) ||
                 (x.Quantity.ToString().Contains(values)) ||
                 x.Id.ToString().Contains(values) &&
@@ -92,7 +92,7 @@ namespace Common.Repository.Application
 
         public List<Procurement> Get()
         {
-            var get = myContext.Procurements.Include("Item").Include("TypeItem").Where(x => x.Item_Id == x.Item.Id && x.TypeItem_Id == x.TypeItem.Id && x.IsDelete == false).ToList();
+            var get = myContext.Procurements.Include("Item").Include("TypeItem").Include("Item.Location").Where(x => x.Item_Id == x.Item.Id && x.TypeItem_Id == x.TypeItem.Id && x.IsDelete == false).ToList();
             return get;
         }
 
