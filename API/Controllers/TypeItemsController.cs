@@ -24,13 +24,11 @@ namespace API.Controllers
         {
             iTypeItemService = _iTypeItemService;
         }
-
         // GET: api/TypeItem
-        public List<TypeItem> GetTypeItem()
+        public List<TypeItem> GetTypeItems()
         {
             return iTypeItemService.Get();
         }
-
 
         // GET: api/TypeItems/5
         public TypeItem GetTypeItem(int id)
@@ -39,16 +37,21 @@ namespace API.Controllers
         }
 
         // PUT: api/TypeItems/5
-
+        public void UpdateTypeItem(int id, TypeItemVM typeItemVM)
+        {
+            iTypeItemService.Update(id, typeItemVM);
+        }
 
         // POST: api/TypeItems
-        public void insertTypeItem(TypeItemVM typeItem)
+        public void InsertTypeItem(TypeItemVM typeItemVM)
         {
-            iTypeItemService.Insert(typeItem);
+            iTypeItemService.Insert(typeItemVM);
         }
 
         // DELETE: api/TypeItems/5
+        public void DeleteTypeItem(int id)
+        {
+            iTypeItemService.Delete(id);
+        }
     }
-
-    
 }

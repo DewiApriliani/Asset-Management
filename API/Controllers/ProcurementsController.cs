@@ -31,22 +31,27 @@ namespace API.Controllers
         }
 
         // GET: api/Procurements/5
-        public Procurement GetProcurment(int id)
+        public Procurement GetProcurement(int id)
         {
             return iProcurementService.Get(id);
         }
 
         // PUT: api/Procurements/5
-      
+        public void UpdateProcurement(int id, ProcurementVM procurementVM)
+        {
+            iProcurementService.Update(id, procurementVM);
+        }
 
         // POST: api/Procurements
-        public void insertProcurment(ProcurementVM procurment)
+        public void InsertProcurement(ProcurementVM procurementVM)
         {
-            iProcurementService.Insert(procurment);
+            iProcurementService.Insert(procurementVM);
         }
 
         // DELETE: api/Procurements/5
-
-
+        public void DeleteProcurement(int id)
+        {
+            iProcurementService.Delete(id);
+        }
     }
 }

@@ -16,7 +16,6 @@ namespace DataAccess.Models
 
         public string Conditon { get; set; }
 
-
         public Condition(ConditionVM conditionVM)
         {
             this.Conditon = conditionVM.Condition;

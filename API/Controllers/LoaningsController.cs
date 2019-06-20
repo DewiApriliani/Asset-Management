@@ -38,15 +38,21 @@ namespace API.Controllers
         }
 
         // PUT: api/Loanings/5
-
+        public void UpdateLoaning(int id, LoaningVM loaningVM)
+        {
+            iLoaningService.Update(id, loaningVM);
+        }
 
         // POST: api/Loanings
-        public void InsertLoaning(LoaningVM Loaning)
+        public void InsertLoaning(LoaningVM loaningVM)
         {
-            iLoaningService.Insert(Loaning);
+            iLoaningService.Insert(loaningVM);
         }
 
         // DELETE: api/Loanings/5
-
+        public void DeleteLoaning(int id)
+        {
+            iLoaningService.Delete(id);
+        }
     }
 }

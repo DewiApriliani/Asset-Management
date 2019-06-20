@@ -38,16 +38,21 @@ namespace API.Controllers
         }
 
         // PUT: api/Returns/5
-        
+        public void UpdateReturn(int id, ReturnVM returnVM)
+        {
+            iReturnService.Update(id, returnVM);
+        }
 
         // POST: api/Returns
-        public void inserReturn(ReturnVM returnVM)
+        public void InsertRetrun(ReturnVM returnVM)
         {
             iReturnService.Insert(returnVM);
         }
 
         // DELETE: api/Returns/5
-       
-
+        public void DeleteReturn(int id)
+        {
+            iReturnService.Delete(id);
+        }
     }
 }

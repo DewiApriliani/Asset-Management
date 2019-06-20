@@ -38,15 +38,21 @@ namespace API.Controllers
         }
 
         // PUT: api/Parameters/5
-        
+        public void UpdateParameter(int id, ParameterVM parameterVM)
+        {
+            iParameterService.Update(id, parameterVM);
+        }
 
         // POST: api/Parameters
-        public void insertParameter(ParameterVM parameter)
+        public void InsertParameter(ParameterVM parameterVM)
         {
-            iParameterService.Insert(parameter);
+            iParameterService.Insert(parameterVM);
         }
 
         // DELETE: api/Parameters/5
-
+        public void DeleteParameter(int id)
+        {
+            iParameterService.Delete(id);
+        }
     }
 }

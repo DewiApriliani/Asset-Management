@@ -13,12 +13,10 @@ namespace DataAccess.Models
     public class Handover : BaseModel
     {
         public string Description { get; set; }
-        public string Name_User { get; set; }
-        public string Name_Admin { get; set; }
         public DateTimeOffset Date_Handover { get; set; }
-        public int User_Id { get; set; }
-        public int Admin_Id { get; set; }
-        public int Divhead_Id { get; set; }
+        public int? User_Id { get; set; }
+        public int? Admin_Id { get; set; }
+        public int? Divhead_Id { get; set; }
 
         [ForeignKey("Loaning")]
         public int Loaning_Id { get; set; }
@@ -33,8 +31,6 @@ namespace DataAccess.Models
         public Handover(HandoverVM HandoverVM)
         {
             this.Description = HandoverVM.Descriptioan;
-            this.Name_User = HandoverVM.Name_User;
-            this.Name_Admin = HandoverVM.Name_Admin;
             this.Date_Handover = HandoverVM.Date_Handover;
             this.User_Id = HandoverVM.User_Id;
             this.User_Id = HandoverVM.User_Id;
@@ -45,8 +41,6 @@ namespace DataAccess.Models
         public void Update(int id, HandoverVM HandoverVM)
         {
             this.Description = HandoverVM.Descriptioan;
-            this.Name_User = HandoverVM.Name_User;
-            this.Name_Admin = HandoverVM.Name_Admin;
             this.Date_Handover = HandoverVM.Date_Handover;
             this.User_Id = HandoverVM.User_Id;
             this.User_Id = HandoverVM.User_Id;

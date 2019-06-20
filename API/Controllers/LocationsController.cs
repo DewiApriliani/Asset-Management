@@ -38,15 +38,21 @@ namespace API.Controllers
         }
 
         // PUT: api/Locations/5
-
+        public void UpdateLocation(int id, LocationVM locationVM)
+        {
+            iLocationService.Update(id, locationVM);
+        }
 
         // POST: api/Locations
-        public void insertLoaction(LocationVM Location)
+        public void InsertLocation(LocationVM locationVM)
         {
-            iLocationService.Insert(Location);
+            iLocationService.Insert(locationVM);
         }
 
         // DELETE: api/Locations/5
-
+        public void DeleteLocation(int id)
+        {
+            iLocationService.Delete(id);
+        }
     }
 }

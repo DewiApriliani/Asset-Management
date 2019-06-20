@@ -30,6 +30,10 @@ namespace DataAccess.Models
         public int Location_Id { get; set; }
         public Location Location { get; set; }
 
+        [ForeignKey("Condition")]
+        public int Condition_Id { get; set; }
+        public Condition Condition { get; set; }
+
         public Item (ItemVM itemVM)
         {
             this.Name_Item = itemVM.Name_Item;

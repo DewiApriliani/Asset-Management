@@ -37,22 +37,22 @@ namespace API.Controllers
             return iItemService.Get(id);
         }
 
-
         // PUT: api/Items/5
-
-
-
-        // POST: api/Items
-        public void insertItem(ItemVM Item)
+        public void UpdateItem(int id, ItemVM itemVM)
         {
-            iItemService.Insert(Item);
+            iItemService.Update(id, itemVM);
         }
 
+        // POST: api/Items
+        public void InsertItem(ItemVM itemVM)
+        {
+            iItemService.Insert(itemVM);
+        }
 
         // DELETE: api/Items/5
-
-
-
-
+        public void DeleteItem(int id)
+        {
+            iItemService.Delete(id);
+        }
     }
 }

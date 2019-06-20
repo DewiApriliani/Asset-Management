@@ -39,18 +39,21 @@ namespace API.Controllers
         }
 
         // PUT: api/Handovers/5
-       // public void UpdateHandover(int id, HandoverVM handoverVM)
-        //{
-        //    iHandoverService.Update(id, handoverVM);
-        //}
+        public void UpdateHandover(int id, HandoverVM handoverVM)
+        {
+            iHandoverService.Update(id, handoverVM);
+        }
 
         // POST: api/Handovers
-        public void insertHandover(HandoverVM Handover)
+        public void InsertHandover(HandoverVM handoverVM)
         {
-            iHandoverService.Insert(Handover);
+            iHandoverService.Insert(handoverVM);
         }
 
         // DELETE: api/Handovers/5
-
+        public void DeleteHandover(int id)
+        {
+            iHandoverService.Delete(id);
+        }
     }
 }

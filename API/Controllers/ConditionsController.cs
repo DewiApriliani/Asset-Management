@@ -36,9 +36,6 @@ namespace API.Controllers
             return iConditionService.Get(id);
         }
 
-
-
-
         // PUT: api/Conditions/5
         public void UpdateCondition(int id, ConditionVM conditionVM)
         {
@@ -46,16 +43,15 @@ namespace API.Controllers
         }
 
         // POST: api/Conditions
-        public void insertCondition(ConditionVM Condition)
+        public void InsertCondition(ConditionVM conditionVM)
         {
-            iConditionService.Insert(Condition);
+            iConditionService.Insert(conditionVM);
         }
 
         // DELETE: api/Conditions/5
-        public bool DeleteCondition(int id)
+        public void DeleteCondition(int id)
         {
-            return iConditionService.Delete(id);
+            iConditionService.Delete(id);
         }
-
     }
 }

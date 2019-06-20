@@ -31,14 +31,6 @@ namespace BusinessLogic.Service.Application
             {
                 return status;
             }
-            else if (string.IsNullOrWhiteSpace(Convert.ToString(handoverVM.Name_User)))
-            {
-                return status;
-            }
-            else if (string.IsNullOrWhiteSpace(Convert.ToString(handoverVM.Name_Admin)))
-            {
-                return status;
-            }
             else if (string.IsNullOrWhiteSpace(Convert.ToString(handoverVM.Date_Handover)))
             {
                 return status;
@@ -84,9 +76,9 @@ namespace BusinessLogic.Service.Application
             return iHandoverRepository.Get();
         }
 
-        public bool Update(int id, HandoverVM hanoverVM)
+        public bool Update(int id, HandoverVM handoverVM)
         {
-            return iHandoverRepository.Update(id, hanoverVM);
+            return iHandoverRepository.Update(id, handoverVM);
         }
     }
 }

@@ -133,7 +133,6 @@ C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\bin\Microsoft.Ow
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client.csprojAssemblyReference.cache
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client.dll
