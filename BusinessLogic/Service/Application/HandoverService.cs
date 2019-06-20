@@ -81,7 +81,7 @@ namespace BusinessLogic.Service.Application
 
         public List<Handover> Get()
         {
-            throw new NotImplementedException();
+            return iHandoverRepository.Get();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Common.Repository
     public interface IHandoverRepository
     {
         Handover Get(int id);
+        List<Handover> Get();
         bool Insert(HandoverVM HandoverVM);
         bool Update(int id, HandoverVM HandoverVM);
         bool Delete(int id);

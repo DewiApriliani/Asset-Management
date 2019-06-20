@@ -11,6 +11,7 @@ using System.Web.Http.Description;
 using BusinessLogic.Service;
 using DataAccess.Context;
 using DataAccess.Models;
+using DataAccess.ViewModel;
 
 namespace API.Controllers
 {
@@ -31,96 +32,22 @@ namespace API.Controllers
         }
 
         // GET: api/Returns/5
-        [ResponseType(typeof(Return))]
-        public IHttpActionResult GetReturn(int id)
+        public Return GetReturn(int id)
         {
-            Return @return = db.Returns.Find(id);
-            if (@return == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(@return);
+            return iReturnService.Get(id);
         }
 
         // PUT: api/Returns/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutReturn(int id, Return @return)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != @return.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(@return).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ReturnExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        
 
         // POST: api/Returns
-        [ResponseType(typeof(Return))]
-        public IHttpActionResult PostReturn(Return @return)
+        public void inserReturn(ReturnVM returnVM)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Returns.Add(@return);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = @return.Id }, @return);
+            iReturnService.Insert(returnVM);
         }
 
         // DELETE: api/Returns/5
-        [ResponseType(typeof(Return))]
-        public IHttpActionResult DeleteReturn(int id)
-        {
-            Return @return = db.Returns.Find(id);
-            if (@return == null)
-            {
-                return NotFound();
-            }
+       
 
-            db.Returns.Remove(@return);
-            db.SaveChanges();
-
-            return Ok(@return);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool ReturnExists(int id)
-        {
-            return db.Returns.Count(e => e.Id == id) > 0;
-        }
     }
 }

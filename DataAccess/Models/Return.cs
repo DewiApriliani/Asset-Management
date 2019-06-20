@@ -20,6 +20,10 @@ namespace DataAccess.Models
         public DateTimeOffset Date_Return { get; set; }
         public int User_Id { get; set; }
 
+        [ForeignKey("TypeItem")]
+        public int TypeItem_Id { get; set; }
+        public TypeItem TypeItem { get; set; }
+
         [ForeignKey("Item")]
         public int Item_Id { get; set; }
         public Item Item { get; set; }

@@ -11,6 +11,7 @@ using System.Web.Http.Description;
 using BusinessLogic.Service;
 using DataAccess.Context;
 using DataAccess.Models;
+using DataAccess.ViewModel;
 
 namespace API.Controllers
 {
@@ -31,96 +32,21 @@ namespace API.Controllers
         }
 
         // GET: api/Loanings/5
-        [ResponseType(typeof(Loaning))]
-        public IHttpActionResult GetLoaning(int id)
+        public Loaning GetLoaning(int id)
         {
-            Loaning loaning = db.Loanings.Find(id);
-            if (loaning == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(loaning);
+            return iLoaningService.Get(id);
         }
 
         // PUT: api/Loanings/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutLoaning(int id, Loaning loaning)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
-            if (id != loaning.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(loaning).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LoaningExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
 
         // POST: api/Loanings
-        [ResponseType(typeof(Loaning))]
-        public IHttpActionResult PostLoaning(Loaning loaning)
+        public void InsertLoaning(LoaningVM Loaning)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Loanings.Add(loaning);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = loaning.Id }, loaning);
+            iLoaningService.Insert(Loaning);
         }
 
         // DELETE: api/Loanings/5
-        [ResponseType(typeof(Loaning))]
-        public IHttpActionResult DeleteLoaning(int id)
-        {
-            Loaning loaning = db.Loanings.Find(id);
-            if (loaning == null)
-            {
-                return NotFound();
-            }
 
-            db.Loanings.Remove(loaning);
-            db.SaveChanges();
-
-            return Ok(loaning);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool LoaningExists(int id)
-        {
-            return db.Loanings.Count(e => e.Id == id) > 0;
-        }
     }
 }
