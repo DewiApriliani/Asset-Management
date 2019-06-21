@@ -13,8 +13,8 @@ namespace BusinessLogic.Service
         TypeItem Get(int id);
         List<TypeItem> GetSearch(string values);
         List<TypeItem> Get();
-        bool Insert(TypeItemVM TypeItemVM);
-        bool Update(int id, TypeItemVM TypeItemVM);
+        bool Insert(TypeItemVM typeItemVM);
+        bool Update(int id, TypeItemVM typeItemVM);
         bool Delete(int id);
     }
 }

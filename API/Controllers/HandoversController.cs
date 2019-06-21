@@ -25,35 +25,68 @@ namespace API.Controllers
         {
             iHandoverService = _iHandoverService;
         }
-        
+
         // GET: api/Handovers
-        public List<Handover> GetHandovers()
+        public HttpResponseMessage GetHandovers()
         {
-            return iHandoverService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iHandoverService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
+    
 
         // GET: api/Handovers/5
-        public Handover GetHandover(int id)
+        public HttpResponseMessage GetHandover(int id)
         {
-            return iHandoverService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iHandoverService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Handovers/5
-        public void UpdateHandover(int id, HandoverVM handoverVM)
+        public HttpResponseMessage UpdateHandover(int id, HandoverVM handoverVM)
         {
-            iHandoverService.Update(id, handoverVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iHandoverService.Update(id, handoverVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Handovers
-        public void InsertHandover(HandoverVM handoverVM)
+        public HttpResponseMessage InsertHandover(HandoverVM handoverVM)
         {
-            iHandoverService.Insert(handoverVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iHandoverService.Insert(handoverVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
+
         // DELETE: api/Handovers/5
-        public void DeleteHandover(int id)
+        public HttpResponseMessage DeleteHandover(int id)
         {
-            iHandoverService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iHandoverService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
+
         }
     }
 }

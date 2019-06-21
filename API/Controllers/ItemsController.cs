@@ -26,33 +26,65 @@ namespace API.Controllers
         }
 
         // GET: api/Items
-        public List<Item> GetItems()
+        public HttpResponseMessage GetItems()
         {
-            return iItemService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iItemService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Items/5
-        public Item GetItem(int id)
+        public HttpResponseMessage GetItem(int id)
         {
-            return iItemService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iItemService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Items/5
-        public void UpdateItem(int id, ItemVM itemVM)
+        public HttpResponseMessage UpdateItem(int id, ItemVM itemVM)
         {
-            iItemService.Update(id, itemVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iItemService.Update(id, itemVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Items
-        public void InsertItem(ItemVM itemVM)
+        public HttpResponseMessage InsertItem(ItemVM itemVM)
         {
-            iItemService.Insert(itemVM);
+
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iItemService.Insert(itemVM);
+            if (result)
+                if (result)
+                {
+                    message = Request.CreateResponse(HttpStatusCode.Created);
+                }
+            return message;
         }
 
         // DELETE: api/Items/5
-        public void DeleteItem(int id)
+        public HttpResponseMessage DeleteItem(int id)
         {
-            iItemService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iItemService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

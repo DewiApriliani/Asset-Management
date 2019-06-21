@@ -25,33 +25,65 @@ namespace API.Controllers
             iConditionService = _iConditionService;
         }
         // GET: api/Conditions
-        public List<Condition> GetConditions()
+        public HttpResponseMessage GetConditions()
         {
-            return iConditionService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iConditionService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Conditions/5
-        public Condition GetCondition(int id)
+        public HttpResponseMessage GetCondition(int id)
+
         {
-            return iConditionService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iConditionService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
+
         // PUT: api/Conditions/5
-        public void UpdateCondition(int id, ConditionVM conditionVM)
+        public HttpResponseMessage UpdateCondition(int id, ConditionVM conditionVM)
         {
-            iConditionService.Update(id, conditionVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iConditionService.Update(id, conditionVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Conditions
-        public void InsertCondition(ConditionVM conditionVM)
+        public HttpResponseMessage InsertCondition(ConditionVM conditionVM)
         {
-            iConditionService.Insert(conditionVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iConditionService.Insert(conditionVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Conditions/5
-        public void DeleteCondition(int id)
+        public HttpResponseMessage DeleteCondition(int id)
         {
-            iConditionService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iConditionService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

@@ -26,33 +26,63 @@ namespace API.Controllers
         }
 
         // GET: api/Items
-        public List<Parameter> GetParameters()
+        public HttpResponseMessage GetParameters()
         {
-            return iParameterService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iParameterService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Parameters/5
-        public Parameter GetParameter(int id)
+        public HttpResponseMessage GetParameter(int id)
         {
-            return iParameterService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iParameterService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Parameters/5
-        public void UpdateParameter(int id, ParameterVM parameterVM)
+        public HttpResponseMessage UpdateParameter(int id, ParameterVM parameterVM)
         {
-            iParameterService.Update(id, parameterVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iParameterService.Update(id, parameterVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Parameters
-        public void InsertParameter(ParameterVM parameterVM)
+        public HttpResponseMessage InsertParameter(ParameterVM parameterVM)
         {
-            iParameterService.Insert(parameterVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iParameterService.Insert(parameterVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Parameters/5
-        public void DeleteParameter(int id)
+        public HttpResponseMessage DeleteParameter(int id)
         {
-            iParameterService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iParameterService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

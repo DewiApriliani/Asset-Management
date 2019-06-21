@@ -26,33 +26,63 @@ namespace API.Controllers
         }
 
         // GET: api/Return
-        public List<Return> GetReturns()
+        public HttpResponseMessage GetReturns()
         {
-            return iReturnService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iReturnService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Returns/5
-        public Return GetReturn(int id)
+        public HttpResponseMessage GetReturn(int id)
         {
-            return iReturnService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iReturnService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Returns/5
-        public void UpdateReturn(int id, ReturnVM returnVM)
+        public HttpResponseMessage UpdateReturn(int id, ReturnVM returnVM)
         {
-            iReturnService.Update(id, returnVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iReturnService.Update(id, returnVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Returns
-        public void InsertRetrun(ReturnVM returnVM)
+        public HttpResponseMessage InsertRetrun(ReturnVM returnVM)
         {
-            iReturnService.Insert(returnVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iReturnService.Insert(returnVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Returns/5
-        public void DeleteReturn(int id)
+        public HttpResponseMessage DeleteReturn(int id)
         {
-            iReturnService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iReturnService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

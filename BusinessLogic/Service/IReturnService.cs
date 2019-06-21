@@ -12,8 +12,8 @@ namespace BusinessLogic.Service
     {
         Return Get(int id);
         List<Return> Get();
-        bool Insert(ReturnVM ReturnVM);
-        bool Update(int id, ReturnVM ReturnVM);
+        bool Insert(ReturnVM returnVM);
+        bool Update(int id, ReturnVM returnVM);
         bool Delete(int id);
     }
 }
