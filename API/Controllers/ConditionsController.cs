@@ -25,16 +25,30 @@ namespace API.Controllers
             iConditionService = _iConditionService;
         }
         // GET: api/Conditions
-        public List<Condition> GetConditions()
+        public HttpResponseMessage GetConditions()
         {
-            return iConditionService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iConditionService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Conditions/5
-        public Condition GetCondition(int id)
+        public HttpResponseMessage GetCondition(int id)
+
         {
-            return iConditionService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iConditionService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
+
 
         // PUT: api/Conditions/5
         public HttpResponseMessage UpdateCondition(int id, ConditionVM conditionVM)
@@ -61,9 +75,15 @@ namespace API.Controllers
         }
 
         // DELETE: api/Conditions/5
-        public void DeleteCondition(int id)
+        public HttpResponseMessage DeleteCondition(int id)
         {
-            iConditionService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iConditionService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

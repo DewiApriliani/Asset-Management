@@ -26,15 +26,27 @@ namespace API.Controllers
         }
 
         // GET: api/Items
-        public List<Parameter> GetParameters()
+        public HttpResponseMessage GetParameters()
         {
-            return iParameterService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iParameterService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Parameters/5
-        public Parameter GetParameter(int id)
+        public HttpResponseMessage GetParameter(int id)
         {
-            return iParameterService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iParameterService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Parameters/5
@@ -62,9 +74,15 @@ namespace API.Controllers
         }
 
         // DELETE: api/Parameters/5
-        public void DeleteParameter(int id)
+        public HttpResponseMessage DeleteParameter(int id)
         {
-            iParameterService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iParameterService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

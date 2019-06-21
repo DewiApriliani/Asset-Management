@@ -26,15 +26,27 @@ namespace API.Controllers
         }
 
         // GET: api/Location
-        public List<Location> GetLocations()
+        public HttpResponseMessage GetLocations()
         {
-            return iLocationService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iLocationService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Locations/5
-        public Location GetLocation(int id)
+        public HttpResponseMessage GetLocation(int id)
         {
-            return iLocationService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLocationService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Locations/5
@@ -62,9 +74,15 @@ namespace API.Controllers
         }
 
         // DELETE: api/Locations/5
-        public void DeleteLocation(int id)
+        public HttpResponseMessage DeleteLocation(int id)
         {
-            iLocationService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLocationService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

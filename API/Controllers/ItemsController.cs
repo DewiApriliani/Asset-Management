@@ -26,15 +26,27 @@ namespace API.Controllers
         }
 
         // GET: api/Items
-        public List<Item> GetItems()
+        public HttpResponseMessage GetItems()
         {
-            return iItemService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iItemService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Items/5
-        public  Item GetItem(int id)
+        public HttpResponseMessage GetItem(int id)
         {
-            return iItemService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iItemService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Items/5
@@ -64,9 +76,15 @@ namespace API.Controllers
         }
 
         // DELETE: api/Items/5
-        public void DeleteItem(int id)
+        public HttpResponseMessage DeleteItem(int id)
         {
-            iItemService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iItemService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

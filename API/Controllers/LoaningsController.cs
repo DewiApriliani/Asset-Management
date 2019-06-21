@@ -26,15 +26,27 @@ namespace API.Controllers
         }
 
         // GET: api/Loanings
-        public List<Loaning> GetLoanings()
+        public HttpResponseMessage GetLoanings()
         {
-            return iLoaningService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iLoaningService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Loanings/5
-        public Loaning GetLoaning(int id)
+        public HttpResponseMessage GetLoaning(int id)
         {
-            return iLoaningService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLoaningService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Loanings/5
@@ -62,9 +74,15 @@ namespace API.Controllers
         }
 
         // DELETE: api/Loanings/5
-        public void DeleteLoaning(int id)
+        public HttpResponseMessage DeleteLoaning(int id)
         {
-            iLoaningService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLoaningService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }
