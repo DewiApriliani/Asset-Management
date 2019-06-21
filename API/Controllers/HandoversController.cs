@@ -42,7 +42,7 @@ namespace API.Controllers
         // GET: api/Handovers/5
         public HttpResponseMessage GetHandover(int id)
         {
-            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
             var result = iHandoverService.Get(id);
             if (result != null)
             {
@@ -58,7 +58,7 @@ namespace API.Controllers
             var result = iHandoverService.Update(id, handoverVM);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK);
+                message = Request.CreateResponse(HttpStatusCode.OK, "Update SUccesfully");
             }
             return message;
         }
@@ -70,7 +70,7 @@ namespace API.Controllers
             var result = iHandoverService.Insert(handoverVM);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK);
+                message = Request.CreateResponse(HttpStatusCode.OK, "Insert Succesfully");
             }
             return message;
         }
@@ -83,7 +83,7 @@ namespace API.Controllers
             var result = iHandoverService.Delete(id);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK);
+                message = Request.CreateResponse(HttpStatusCode.OK, "Delete Succesfully");
             }
             return message;
 

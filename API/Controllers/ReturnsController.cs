@@ -40,7 +40,7 @@ namespace API.Controllers
         // GET: api/Returns/5
         public HttpResponseMessage GetReturn(int id)
         {
-            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
             var result = iReturnService.Get(id);
             if (result != null)
             {
@@ -56,7 +56,7 @@ namespace API.Controllers
             var result = iReturnService.Update(id, returnVM);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK);
+                message = Request.CreateResponse(HttpStatusCode.OK, "Update SUccesfully");
             }
             return message;
         }
@@ -68,7 +68,7 @@ namespace API.Controllers
             var result = iReturnService.Insert(returnVM);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.Created);
+                message = Request.CreateResponse(HttpStatusCode.Created, "Insert Succesfully");
             }
             return message;
         }
@@ -80,7 +80,7 @@ namespace API.Controllers
             var result = iReturnService.Delete(id);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK);
+                message = Request.CreateResponse(HttpStatusCode.OK, "Delete Succesfully");
             }
             return message;
         }

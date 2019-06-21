@@ -40,7 +40,7 @@ namespace API.Controllers
         public HttpResponseMessage GetCondition(int id)
 
         {
-            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
             var result = iConditionService.Get(id);
             if (result != null)
             {
@@ -57,7 +57,7 @@ namespace API.Controllers
             var result = iConditionService.Update(id, conditionVM);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK);
+                message = Request.CreateResponse(HttpStatusCode.OK, "Update SUccesfully");
             }
             return message;
         }
@@ -69,7 +69,7 @@ namespace API.Controllers
             var result = iConditionService.Insert(conditionVM);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.Created);
+                message = Request.CreateResponse(HttpStatusCode.OK, "Insert Succesfully");
             }
             return message;
         }
@@ -81,7 +81,7 @@ namespace API.Controllers
             var result = iConditionService.Delete(id);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK);
+                message = Request.CreateResponse(HttpStatusCode.OK, "Delete Succesfully");
             }
             return message;
         }
