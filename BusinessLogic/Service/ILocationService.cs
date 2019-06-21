@@ -12,8 +12,8 @@ namespace BusinessLogic.Service.Application
     {
         List<Location> Get();
         Location Get(int id);
-        bool Insert(LocationVM LocationVM);
-        bool Update(int id, LocationVM LocationVM);
+        bool Insert(LocationVM locationVM);
+        bool Update(int id, LocationVM locationVM);
         bool Delete(int id);
     }
 }

@@ -13,8 +13,8 @@ namespace BusinessLogic.Service
         Handover Get(int id);
         List<Handover> GetSearch(string values);
         List<Handover> Get();
-        bool Insert(HandoverVM HandoverVM);
+        bool Insert(HandoverVM handoverVM);
+        bool Update(int id, HandoverVM handoverVM);
         bool Delete(int id);
-        bool Update(int id, HandoverVM HandoverVM);
     }
 }

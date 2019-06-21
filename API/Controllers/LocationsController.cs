@@ -26,33 +26,63 @@ namespace API.Controllers
         }
 
         // GET: api/Location
-        public List<Location> GetLocations()
+        public HttpResponseMessage GetLocations()
         {
-            return iLocationService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iLocationService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Locations/5
-        public Location GetLocation(int id)
+        public HttpResponseMessage GetLocation(int id)
         {
-            return iLocationService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLocationService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Locations/5
-        public void UpdateLocation(int id, LocationVM locationVM)
+        public HttpResponseMessage UpdateLocation(int id, LocationVM locationVM)
         {
-            iLocationService.Update(id, locationVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLocationService.Update(id, locationVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Locations
-        public void InsertLocation(LocationVM locationVM)
+        public HttpResponseMessage InsertLocation(LocationVM locationVM)
         {
-            iLocationService.Insert(locationVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLocationService.Insert(locationVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Locations/5
-        public void DeleteLocation(int id)
+        public HttpResponseMessage DeleteLocation(int id)
         {
-            iLocationService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iLocationService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

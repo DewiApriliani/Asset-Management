@@ -28,7 +28,6 @@ namespace DataAccess.Models
 
         public void Update(int id, EmployeeVM employeeVM)
         {
-            this.Id = id;
             this.User_Id = User_Id;
             this.Admin_Id = Admin_Id;
             this.Divhead_Id = Divhead_Id;

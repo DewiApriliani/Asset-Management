@@ -25,33 +25,63 @@ namespace API.Controllers
             iTypeItemService = _iTypeItemService;
         }
         // GET: api/TypeItem
-        public List<TypeItem> GetTypeItems()
+        public HttpResponseMessage GetTypeItems()
         {
-            return iTypeItemService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iTypeItemService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/TypeItems/5
-        public TypeItem GetTypeItem(int id)
+        public HttpResponseMessage GetTypeItem(int id)
         {
-            return iTypeItemService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iTypeItemService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/TypeItems/5
-        public void UpdateTypeItem(int id, TypeItemVM typeItemVM)
+        public HttpResponseMessage UpdateTypeItem(int id, TypeItemVM typeItemVM)
         {
-            iTypeItemService.Update(id, typeItemVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iTypeItemService.Update(id, typeItemVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/TypeItems
-        public void InsertTypeItem(TypeItemVM typeItemVM)
+        public HttpResponseMessage InsertTypeItem(TypeItemVM typeItemVM)
         {
-            iTypeItemService.Insert(typeItemVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iTypeItemService.Insert(typeItemVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/TypeItems/5
-        public void DeleteTypeItem(int id)
+        public HttpResponseMessage DeleteTypeItem(int id)
         {
-            iTypeItemService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iTypeItemService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

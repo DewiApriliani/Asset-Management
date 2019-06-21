@@ -25,33 +25,63 @@ namespace API.Controllers
             iProcurementService = _iProcurementService;
         }
         // GET: api/Procurements
-        public List<Procurement> GetProcurements()
+        public HttpResponseMessage GetProcurements()
         {
-            return iProcurementService.Get();
+            var message = Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
+            var result = iProcurementService.Get();
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // GET: api/Procurements/5
-        public Procurement GetProcurement(int id)
+        public HttpResponseMessage GetProcurement(int id)
         {
-            return iProcurementService.Get(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iProcurementService.Get(id);
+            if (result != null)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // PUT: api/Procurements/5
-        public void UpdateProcurement(int id, ProcurementVM procurementVM)
+        public HttpResponseMessage UpdateProcurement(int id, ProcurementVM procurementVM)
         {
-            iProcurementService.Update(id, procurementVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iProcurementService.Update(id, procurementVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
 
         // POST: api/Procurements
-        public void InsertProcurement(ProcurementVM procurementVM)
+        public HttpResponseMessage InsertProcurement(ProcurementVM procurementVM)
         {
-            iProcurementService.Insert(procurementVM);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iProcurementService.Insert(procurementVM);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return message;
         }
 
         // DELETE: api/Procurements/5
-        public void DeleteProcurement(int id)
+        public HttpResponseMessage DeleteProcurement(int id)
         {
-            iProcurementService.Delete(id);
+            var message = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Bad Request");
+            var result = iProcurementService.Delete(id);
+            if (result)
+            {
+                message = Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return message;
         }
     }
 }

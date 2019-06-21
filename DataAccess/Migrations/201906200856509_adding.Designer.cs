@@ -7,6 +7,15 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
+<<<<<<< HEAD:DataAccess/Migrations/201906200141430_AssetManagementDB.Designer.cs
+    public sealed partial class AssetManagementDB : IMigrationMetadata
+    {
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AssetManagementDB));
+        
+        string IMigrationMetadata.Id
+        {
+            get { return "201906200141430_AssetManagementDB"; }
+=======
     public sealed partial class adding : IMigrationMetadata
     {
         private readonly ResourceManager Resources = new ResourceManager(typeof(adding));
@@ -14,6 +23,7 @@ namespace DataAccess.Migrations
         string IMigrationMetadata.Id
         {
             get { return "201906200856509_adding"; }
+>>>>>>> a6d6e1465314d928f3b95ad0e1a8b609206ca4b1:DataAccess/Migrations/201906200856509_adding.Designer.cs
         }
         
         string IMigrationMetadata.Source
