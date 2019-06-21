@@ -24,6 +24,16 @@ namespace BusinessLogic.Service.Application
             return iTypeItemRepository.Get(id);
         }
 
+        public List<TypeItem> GetSearch(string values)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<TypeItem> Get()
+        {
+            return iTypeItemRepository.Get();
+        }
+
         public bool Insert(TypeItemVM typeItemVM)
         {
             if (string.IsNullOrWhiteSpace(Convert.ToString(typeItemVM.Name_TypeItem)))
@@ -36,25 +46,28 @@ namespace BusinessLogic.Service.Application
             }
         }
 
-        public bool Delete(int id)
-        {
-            return iTypeItemRepository.Delete(id);
-        }
-
-
         public bool Update(int id, TypeItemVM typeItemVM)
         {
-            return iTypeItemRepository.Update(id, typeItemVM);
+            if (string.IsNullOrWhiteSpace(typeItemVM.Id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iTypeItemRepository.Update(id, typeItemVM);
+            }
         }
 
-        public List<TypeItem> GetSearch(string values)
+        public bool Delete(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<TypeItem> Get()
-        {
-            return iTypeItemRepository.Get();
+            if (string.IsNullOrWhiteSpace(id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iTypeItemRepository.Delete(id);
+            }
         }
     }
 }

@@ -137,3 +137,4 @@ C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client.dll
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client.pdb
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Client\obj\Debug\Client.csprojAssemblyReference.cache

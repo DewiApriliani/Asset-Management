@@ -19,6 +19,11 @@ namespace BusinessLogic.Service.Application
             iReturnRepository = _iReturnRepository;
         }
 
+        public List<Return> Get()
+        {
+            return iReturnRepository.Get();
+        }
+
         public Return Get(int id)
         {
             return iReturnRepository.Get(id);
@@ -52,19 +57,28 @@ namespace BusinessLogic.Service.Application
             }
         }
 
-        public bool Delete(int id)
-        {
-            return iReturnRepository.Delete(id);
-        }
-
-        public List<Return> Get()
-        {
-            return iReturnRepository.Get();
-        }
-
         public bool Update(int id, ReturnVM returnVM)
         {
-            return iReturnRepository.Update(id, returnVM);
+            if (string.IsNullOrWhiteSpace(returnVM.Id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iReturnRepository.Update(id, returnVM);
+            }
+        }
+
+        public bool Delete(int id)
+        {
+            if (string.IsNullOrWhiteSpace(id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iReturnRepository.Delete(id);
+            }
         }
     }
 }

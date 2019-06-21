@@ -19,11 +19,6 @@ namespace BusinessLogic.Service.Application
             iConditionRepository = _iConditionRepository;
         }
 
-        public bool Delete(int id)
-        {
-            return iConditionRepository.Delete(id);
-        }
-
         public List<Condition> Get()
         {
             return iConditionRepository.Get();
@@ -48,7 +43,26 @@ namespace BusinessLogic.Service.Application
 
         public bool Update(int id, ConditionVM conditionVM)
         {
-            return iConditionRepository.Update(id, conditionVM);
+            if (string.IsNullOrWhiteSpace(conditionVM.Id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iConditionRepository.Update(id, conditionVM);
+            }
+        }
+
+        public bool Delete(int id)
+        {
+            if (string.IsNullOrWhiteSpace(id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iConditionRepository.Delete(id);
+            }
         }
     }
 }

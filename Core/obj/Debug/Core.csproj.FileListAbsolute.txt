@@ -19,3 +19,4 @@ C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Core\obj\Debug\Core.csp
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Core\obj\Debug\Core.csproj.CopyComplete
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Core\obj\Debug\Core.exe
 C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Core\obj\Debug\Core.pdb
+C:\Users\Irfan\Desktop\Bootcamp MII\Git\Asset-Management\Core\obj\Debug\Core.csprojAssemblyReference.cache

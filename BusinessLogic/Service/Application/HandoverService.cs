@@ -25,6 +25,16 @@ namespace BusinessLogic.Service.Application
             return iHandoverRepository.Get(id);
         }
 
+        public List<Handover> GetSearch(string values)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Handover> Get()
+        {
+            return iHandoverRepository.Get();
+        }
+
         public bool Insert(HandoverVM handoverVM)
         {
             if (string.IsNullOrWhiteSpace(Convert.ToString(handoverVM.Descriptioan)))
@@ -61,24 +71,28 @@ namespace BusinessLogic.Service.Application
             }
         }
 
-        public bool Delete(int id)
-        {
-            return iHandoverRepository.Delete(id);
-        }
-
-        public List<Handover> GetSearch(string values)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Handover> Get()
-        {
-            return iHandoverRepository.Get();
-        }
-
         public bool Update(int id, HandoverVM handoverVM)
         {
-            return iHandoverRepository.Update(id, handoverVM);
+            if (string.IsNullOrWhiteSpace(handoverVM.Id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iHandoverRepository.Update(id, handoverVM);
+            }
+        }
+
+        public bool Delete(int id)
+        {
+            if (string.IsNullOrWhiteSpace(id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iHandoverRepository.Delete(id);
+            }
         }
     }
 }

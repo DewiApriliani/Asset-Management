@@ -76,12 +76,26 @@ namespace BusinessLogic.Service.Application
 
         public bool Update(int id, ProcurementVM procurementVM)
         {
-            return iProcurementRepository.Update(id, procurementVM);
+            if (string.IsNullOrWhiteSpace(procurementVM.Id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iProcurementRepository.Update(id, procurementVM);
+            }
         }
 
         public bool Delete(int id)
         {
-            return iProcurementRepository.Delete(id);
+            if (string.IsNullOrWhiteSpace(id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iProcurementRepository.Delete(id);
+            }
         }
     }
 }

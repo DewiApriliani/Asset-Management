@@ -84,12 +84,26 @@ namespace BusinessLogic.Service.Application
 
         public bool Update(int id, ItemVM itemVM)
         {
-            return iItemRepository.Update(id, itemVM);
+            if (string.IsNullOrWhiteSpace(itemVM.Id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iItemRepository.Update(id, itemVM);
+            }
         }
 
         public bool Delete(int id)
         {
-            return iItemRepository.Delete(id);
+            if (string.IsNullOrWhiteSpace(id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iItemRepository.Delete(id);
+            }
         }
     }
 }

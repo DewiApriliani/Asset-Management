@@ -19,6 +19,11 @@ namespace BusinessLogic.Service.Application
             iParameterRepository = _iParameterRepository;
         }
 
+        public List<Parameter> Get()
+        {
+            return iParameterRepository.Get();
+        }
+
         public Parameter Get(int id)
         {
             return iParameterRepository.Get(id);
@@ -42,17 +47,26 @@ namespace BusinessLogic.Service.Application
 
         public bool Update(int id, ParameterVM parameterVM)
         {
-            return iParameterRepository.Update(id, parameterVM);
+            if (string.IsNullOrWhiteSpace(parameterVM.Id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iParameterRepository.Update(id, parameterVM);
+            }
         }
 
         public bool Delete(int id)
         {
-            return iParameterRepository.Delete(id);
-        }
-
-        public List<Parameter> Get()
-        {
-            return iParameterRepository.Get();
+            if (string.IsNullOrWhiteSpace(id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iParameterRepository.Delete(id);
+            }
         }
     }
 }

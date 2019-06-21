@@ -64,12 +64,26 @@ namespace BusinessLogic.Service.Application
 
         public bool Update(int id, LoaningVM loaningVM)
         {
-            return iLoaningRepository.Update(id, loaningVM);
+            if (string.IsNullOrWhiteSpace(loaningVM.Id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iLoaningRepository.Update(id, loaningVM);
+            }
         }
 
         public bool Delete(int id)
         {
-            return iLoaningRepository.Delete(id);
+            if (string.IsNullOrWhiteSpace(id.ToString()))
+            {
+                return status;
+            }
+            else
+            {
+                return iLoaningRepository.Delete(id);
+            }
         }
     }
 }

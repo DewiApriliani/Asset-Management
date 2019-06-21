@@ -31,7 +31,7 @@ namespace API.Controllers
             var result = iConditionService.Get();
             if (result != null)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK);
+                message = Request.CreateResponse(HttpStatusCode.OK, result);
             }
             return message;
         }
@@ -56,11 +56,7 @@ namespace API.Controllers
             var result = iConditionService.Update(id, conditionVM);
             if (result)
             {
-
                 message = Request.CreateResponse(HttpStatusCode.OK, conditionVM);
-
-                message = Request.CreateResponse(HttpStatusCode.OK);
-
             }
             return message;
         }
@@ -72,7 +68,7 @@ namespace API.Controllers
             var result = iConditionService.Insert(conditionVM);
             if (result)
             {
-                message = Request.CreateResponse(HttpStatusCode.OK, conditionVM);
+                message = Request.CreateResponse(HttpStatusCode.OK);
             }
             return message;
         }
